@@ -39,7 +39,7 @@ export function Heroi() {
                 />
               </div>
               <span className="text-xs font-semibold text-gray-400 tracking-wide">
-                Confiado por <span className="text-cyan-400">+12.000</span>{" "}
+                Confiado por <span className="text-purple-400">+12.000</span>{" "}
                 usuarios ativos
               </span>
             </div>
@@ -79,7 +79,7 @@ export function Heroi() {
             {/* Indicadores de Confianca */}
             <div className="mt-12 flex items-center justify-center lg:justify-start gap-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
               <div className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-cyan-400">
+                <span className="material-symbols-outlined text-purple-400">
                   verified_user
                 </span>
                 <span className="text-sm font-medium text-white">
@@ -100,10 +100,10 @@ export function Heroi() {
           {/* Conteudo Direito - Mockup do Celular */}
           <div className="lg:w-1/2 relative flex justify-center mockup-container">
             {/* Card Flutuante Esquerdo */}
-            <div className="absolute -left-12 top-20 z-30 neon-card neon-cyan-glow p-5 rounded-3xl w-48 animate-float-slow">
+            <div className="absolute -left-12 top-20 z-30 neon-card neon-purple-glow p-5 rounded-3xl w-48 animate-float-slow">
               <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-xl bg-cyan-500/20 flex items-center justify-center">
-                  <span className="material-symbols-outlined text-cyan-400">
+                <div className="w-10 h-10 rounded-xl bg-blue-500/20 flex items-center justify-center">
+                  <span className="material-symbols-outlined text-blue-400">
                     savings
                   </span>
                 </div>
@@ -111,7 +111,7 @@ export function Heroi() {
               </div>
               <div className="space-y-1">
                 <p className="text-[10px] text-gray-400">Este mes</p>
-                <p className="text-lg font-bold text-cyan-400">R$ 450,00</p>
+                <p className="text-lg font-bold text-blue-400">R$ 450,00</p>
               </div>
             </div>
 
@@ -136,7 +136,7 @@ export function Heroi() {
             </div>
 
             {/* Mockup do Celular */}
-            <div className="relative w-[300px] h-[610px] bg-[#020617] rounded-[3.5rem] border-[12px] border-[#1e293b] shadow-[0_0_50px_rgba(34,211,238,0.1)] overflow-hidden z-20 transform rotate-1">
+            <div className="relative w-[300px] h-[610px] bg-[#020617] rounded-[3.5rem] border-[12px] border-[#1e293b] shadow-[0_0_50px_rgba(168,85,247,0.12)] overflow-hidden z-20 transform rotate-1">
               <div className="phone-inner h-full flex flex-col">
                 {/* Header do App */}
                 <div className="bg-[#0f172a] px-5 py-4 flex items-center justify-between border-b-2 border-purple-600">
@@ -175,7 +175,7 @@ export function Heroi() {
                 </div>
 
                 {/* Card Resumo Mensal */}
-                <div className="mx-4 mt-2 p-4 rounded-2xl bg-[#0f172a] border border-white/5">
+                <div className="mx-4 mt-2 p-4 rounded-2xl bg-[#0f172a] border border-white/5 transform-gpu transition-transform duration-300 hover:scale-105 hover:shadow-lg">
                   <p className="text-gray-400 text-xs mb-1">
                     <span className="text-white font-semibold">janeiro</span> /
                     2026
@@ -185,13 +185,13 @@ export function Heroi() {
                     R$ 3.020,00
                   </p>
                   <div className="flex justify-between mt-2">
-                    <div>
+                    <div className="transform-gpu transition-transform duration-300 rounded-md p-1">
                       <p className="text-gray-500 text-[10px]">Entradas</p>
                       <p className="text-emerald-400 text-sm font-semibold">
                         R$ 3.600,00
                       </p>
                     </div>
-                    <div className="text-right">
+                    <div className="text-right transform-gpu transition-transform duration-300 rounded-md p-1">
                       <p className="text-gray-500 text-[10px]">Saidas</p>
                       <p className="text-red-500 text-sm font-semibold">
                         R$ 580,00
@@ -201,7 +201,7 @@ export function Heroi() {
                 </div>
 
                 {/* Card Gastos por Categoria */}
-                <div className="mx-4 mt-2 p-3 rounded-2xl bg-[#0f172a] border border-white/5">
+                <div className="mx-4 mt-2 p-3 rounded-2xl bg-[#0f172a] border border-white/5 transform-gpu transition-transform duration-300 hover:scale-105 hover:shadow-lg">
                   <div className="flex items-center justify-between mb-2">
                     <p className="text-white text-xs font-semibold">
                       Gastos por Categoria{" "}
@@ -221,7 +221,7 @@ export function Heroi() {
                         viewBox="0 0 36 36"
                         className="w-full h-full -rotate-90"
                       >
-                        {/* Cartao de credito - 69% - roxo */}
+                        {/* Cartão - 69% */}
                         <circle
                           cx="18"
                           cy="18"
@@ -229,10 +229,10 @@ export function Heroi() {
                           fill="none"
                           stroke="#a855f7"
                           strokeWidth="6"
-                          strokeDasharray="75.4 24.6"
+                          strokeDasharray="52.0 23.4"
                           strokeDashoffset="0"
                         />
-                        {/* Academia - 13.8% - ciano */}
+                        {/* Academia - 13.8% */}
                         <circle
                           cx="18"
                           cy="18"
@@ -240,10 +240,10 @@ export function Heroi() {
                           fill="none"
                           stroke="#22d3ee"
                           strokeWidth="6"
-                          strokeDasharray="10.4 89.6"
-                          strokeDashoffset="-75.4"
+                          strokeDasharray="10.4 64.9"
+                          strokeDashoffset="-52.0"
                         />
-                        {/* Assinaturas - 8.6% - amarelo */}
+                        {/* Assinaturas - 8.6% */}
                         <circle
                           cx="18"
                           cy="18"
@@ -251,10 +251,10 @@ export function Heroi() {
                           fill="none"
                           stroke="#facc15"
                           strokeWidth="6"
-                          strokeDasharray="6.5 93.5"
-                          strokeDashoffset="-85.8"
+                          strokeDasharray="6.5 68.9"
+                          strokeDashoffset="-62.4"
                         />
-                        {/* Alimentacao - 8.6% - verde */}
+                        {/* Alimentacao - 8.6% */}
                         <circle
                           cx="18"
                           cy="18"
@@ -262,8 +262,8 @@ export function Heroi() {
                           fill="none"
                           stroke="#22c55e"
                           strokeWidth="6"
-                          strokeDasharray="6.5 93.5"
-                          strokeDashoffset="-92.3"
+                          strokeDasharray="6.5 68.9"
+                          strokeDashoffset="-68.9"
                         />
                       </svg>
                       <div className="absolute inset-0 flex flex-col items-center justify-center">
@@ -280,7 +280,7 @@ export function Heroi() {
                         <div className="flex items-center gap-2">
                           <div className="w-2 h-2 rounded-full bg-purple-500"></div>
                           <span className="text-gray-400 text-[10px]">
-                            cartao de cre...
+                            Cartão
                           </span>
                         </div>
                         <span className="text-white text-[10px] font-medium">
@@ -323,27 +323,26 @@ export function Heroi() {
                     </div>
                   </div>
                 </div>
-
                 {/* Espacador flexivel */}
                 <div className="flex-1"></div>
 
                 {/* Navegacao Inferior */}
                 <div className="relative px-6 py-4 bg-[#0f172a] border-t border-white/5">
-                  <div className="flex justify-between items-center">
-                    <div className="flex flex-col items-center gap-1">
+                  <div className="flex items-center justify-center">
+                    <div className="flex flex-col items-center gap-1 mr-14 transform-gpu transition-transform duration-300 hover:scale-105 hover:shadow-lg">
                       <span className="material-symbols-outlined text-gray-500 text-xl">
                         person
                       </span>
                       <span className="text-gray-500 text-[9px]">Perfil</span>
                     </div>
-                    <div className="absolute left-1/2 -translate-x-1/2 -top-7">
+                    <div className="absolute left-1/2 -translate-x-1/2 -top-7 transform-gpu transition-transform duration-300 hover:scale-105 hover:shadow-lg">
                       <div className="w-14 h-14 rounded-full bg-purple-600 flex items-center justify-center shadow-[0_0_20px_rgba(147,51,234,0.6)]">
                         <span className="material-symbols-outlined text-white text-2xl">
                           add
                         </span>
                       </div>
                     </div>
-                    <div className="flex flex-col items-center gap-1">
+                    <div className="flex flex-col items-center gap-1 ml-14 transform-gpu transition-transform duration-300 hover:scale-105 hover:shadow-lg">
                       <span className="material-symbols-outlined text-gray-500 text-xl">
                         bar_chart
                       </span>
@@ -356,7 +355,7 @@ export function Heroi() {
 
             {/* Brilho de Fundo */}
             <div className="absolute inset-0 z-0 flex items-center justify-center">
-              <div className="w-[400px] h-[400px] bg-cyan-500/10 blur-[100px] rounded-full"></div>
+              <div className="w-[400px] h-[400px] bg-purple-500/10 blur-[100px] rounded-full"></div>
             </div>
           </div>
         </div>

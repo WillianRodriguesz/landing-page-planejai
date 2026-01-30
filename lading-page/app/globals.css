@@ -114,7 +114,7 @@
   height: 800px;
   background: radial-gradient(
     circle,
-    rgba(59, 130, 246, 0.08) 0%,
+    rgba(168, 85, 247, 0.08) 0%,
     transparent 70%
   );
   top: -200px;
@@ -152,7 +152,23 @@
 }
 
 .mockup-container {
-  perspective: 1000px;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+.mockup-tilt {
+  transform: rotateX(3deg) rotate(-1deg);
+  transform-origin: center;
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+.mockup-tilt-slight {
+  transform: rotateX(3deg) rotate(-1deg);
+}
+
+.mockup-tilt-medium {
+  transform: rotateX(6deg) rotate(-2deg);
 }
 
 .phone-inner {

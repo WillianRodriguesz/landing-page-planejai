@@ -10,7 +10,7 @@ export function Rodape() {
           {/* Marca */}
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-600 to-purple-600 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-600 to-purple-700 flex items-center justify-center">
                 <span className="material-symbols-outlined text-white text-sm">
                   account_balance_wallet
                 </span>
@@ -61,7 +61,7 @@ export function Rodape() {
               <li>
                 <Link
                   href="#"
-                  className="hover:text-cyan-400 transition-colors"
+                  className="hover:text-purple-400 transition-colors"
                 >
                   Funcionalidades
                 </Link>
@@ -69,7 +69,7 @@ export function Rodape() {
               <li>
                 <Link
                   href="#"
-                  className="hover:text-cyan-400 transition-colors"
+                  className="hover:text-purple-400 transition-colors"
                 >
                   Seguranca
                 </Link>
@@ -77,7 +77,7 @@ export function Rodape() {
               <li>
                 <Link
                   href="#"
-                  className="hover:text-cyan-400 transition-colors"
+                  className="hover:text-purple-400 transition-colors"
                 >
                   Planos
                 </Link>
@@ -94,7 +94,7 @@ export function Rodape() {
               <li>
                 <Link
                   href="#"
-                  className="hover:text-cyan-400 transition-colors"
+                  className="hover:text-purple-400 transition-colors"
                 >
                   Sobre Nos
                 </Link>
@@ -102,7 +102,7 @@ export function Rodape() {
               <li>
                 <Link
                   href="#"
-                  className="hover:text-cyan-400 transition-colors"
+                  className="hover:text-purple-400 transition-colors"
                 >
                   Blog
                 </Link>
@@ -110,7 +110,7 @@ export function Rodape() {
               <li>
                 <Link
                   href="#"
-                  className="hover:text-cyan-400 transition-colors"
+                  className="hover:text-purple-400 transition-colors"
                 >
                   Carreiras
                 </Link>
@@ -122,7 +122,7 @@ export function Rodape() {
           <div className="md:text-right">
             <Link
               href="#"
-              className="inline-flex items-center gap-2 text-sm text-cyan-400 font-bold group"
+              className="inline-flex items-center gap-2 text-sm text-purple-400 font-bold group"
             >
               Baixar App Mobile{" "}
               <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">

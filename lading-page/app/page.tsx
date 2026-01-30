@@ -4,10 +4,9 @@ import { ProvaSocial } from "@/components/prova-social";
 import { Recursos } from "@/components/recursos";
 import { Rodape } from "@/components/rodape";
 
-
 export default function Pagina() {
   return (
-    <main className="selection:bg-cyan-500/30">
+    <main className="selection:bg-purple-500/30">
       <Navegacao />
       <Heroi />
       <ProvaSocial />
