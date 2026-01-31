@@ -132,13 +132,17 @@ export function Rodape() {
               </div>
               <div className="space-y-2">
                 <Link
-                  href="#"
+                  href="https://app.planejai.cloud/termos"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block text-gray-400 hover:text-purple-400 transition-colors text-sm"
                 >
                   Política de Privacidade
                 </Link>
                 <Link
-                  href="#"
+                  href="https://app.planejai.cloud/termos"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block text-gray-400 hover:text-purple-400 transition-colors text-sm"
                 >
                   Termos de Uso

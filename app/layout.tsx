@@ -11,7 +11,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Planejai",
+  title: "Planejai | Finanças",
   description:
     "A experiência definitiva em gestão pessoal. Planeje metas, acompanhe gastos e veja seu patrimônio crescer.",
   icons: {
