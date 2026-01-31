@@ -13,7 +13,6 @@ export function Hero() {
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-8">
           {/* Conteudo Esquerdo */}
           <div className="lg:w-1/2 text-center lg:text-left">
-           
             {/* Titulo Principal */}
             <h1 className="text-5xl md:text-6xl lg:text-[5.5rem] font-extrabold tracking-tight mb-8 leading-[1] text-white">
               Planeje Seu <br />{" "}
@@ -61,7 +60,7 @@ export function Hero() {
                   cloud_done
                 </span>
                 <span className="text-sm font-medium text-white">
-                   Sincronização em tempo real
+                  Sincronização em tempo real
                 </span>
               </div>
             </div>
@@ -330,6 +329,9 @@ export function Hero() {
           </div>
         </div>
       </div>
+
+      {/* Gradiente de transição para a próxima seção */}
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-[#030712]"></div>
     </section>
   );
 }
