@@ -74,7 +74,7 @@ export function Hero() {
           {/* Conteudo Direito - Mockup do Celular */}
           <div className="lg:w-1/2 relative flex justify-center mockup-container">
             {/* Card Flutuante Esquerdo */}
-            <div className="absolute -left-12 top-20 z-30 neon-card neon-purple-glow p-5 rounded-3xl w-48 animate-float-slow hidden lg:block">
+            <div className="absolute -left-4 top-20 z-30 neon-card neon-purple-glow p-5 rounded-3xl w-48 animate-float-slow hidden lg:block">
               <div className="flex items-center gap-3 mb-3">
                 <div className="w-10 h-10 rounded-xl bg-blue-500/20 flex items-center justify-center">
                   <span className="material-symbols-outlined text-blue-400">
@@ -115,10 +115,12 @@ export function Hero() {
                 {/* Header do App */}
                 <div className="bg-[#0f172a] px-5 py-4 flex items-center justify-between border-b-2 border-purple-600">
                   <div className="flex items-center gap-2">
-                    <div className="w-7 h-7 bg-purple-600/30 rounded-lg flex items-center justify-center">
-                      <span className="text-purple-400 font-bold text-sm">
-                        P
-                      </span>
+                    <div className="w-7 h-7 bg-purple-600/30 rounded-lg flex items-center justify-center overflow-hidden">
+                      <img
+                        src="/image/logo-planejai.png"
+                        alt="Logo Planejai"
+                        className="w-6 h-6 object-contain"
+                      />
                     </div>
                     <span className="text-purple-400 font-bold text-lg">
                       Planejai

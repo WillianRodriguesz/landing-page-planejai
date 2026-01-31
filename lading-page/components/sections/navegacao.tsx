@@ -11,12 +11,14 @@ export function Navegacao() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-600 to-purple-700 flex items-center justify-center shadow-lg shadow-purple-500/20">
-              <span className="material-symbols-outlined text-white text-2xl">
-                account_balance_wallet
-              </span>
+            <div className="flex items-center justify-center overflow-hidden">
+              <img
+                src="/image/logo-planejai.png"
+                alt="Logo Planejai"
+                className="w-8 h-8 object-contain shadow-[0_0_32px_8px_#a259ff33] rounded-none"
+              />
             </div>
-            <span className="font-bold text-2xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
+            <span className="font-bold text-2xl tracking-tight bg-clip-text text-transparent bg-linear-to-r from-white to-gray-400">
               Planejai
             </span>
           </div>
@@ -45,7 +47,7 @@ export function Navegacao() {
             </Link>
             <Link
               href="#"
-              className="inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold rounded-full text-white bg-gradient-to-r from-purple-600 to-purple-700 hover:scale-105 transition-all shadow-lg shadow-purple-500/20"
+              className="inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold rounded-full text-white bg-linear-to-r from-purple-600 to-purple-700 hover:scale-105 transition-all shadow-lg shadow-purple-500/20"
             >
               Começar Agora
             </Link>
