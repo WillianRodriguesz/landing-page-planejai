@@ -78,9 +78,9 @@ export function ChatBot() {
         <div className="flex justify-between items-center">
           {/* Mockup do Celular com Conversa WhatsApp */}
           <div className="relative w-[300px] h-[600px] bg-[#020617] rounded-[3.5rem] border-[12px] border-[#1e293b] shadow-[0_0_50px_rgba(168,85,247,0.12)] overflow-hidden z-20 transform -rotate-1 ml-30">
-            <div className="phone-inner h-full flex flex-col bg-[#0a0a0a]">
+            <div className="phone-inner h-full flex flex-col bg-[#04091b]">
               {/* Header WhatsApp */}
-              <div className="bg-[#1f1f1f] px-2 py-3 flex items-center gap-2 border-b border-gray-700">
+              <div className="bg-[#0f172a] px-2 py-3 flex items-center gap-2 border-b border-gray-700">
                 <span className="material-symbols-outlined text-gray-400 text-xs">
                   arrow_back_ios_new
                 </span>
@@ -104,7 +104,7 @@ export function ChatBot() {
               </div>
 
               {/* Área de Conversa */}
-              <div className="flex-1 p-4 space-y-2 bg-[#0a0a0a]">
+              <div className="flex-1 p-4 space-y-2 bg-[#04091b]">
                 {/* Mensagem do Usuário */}
                 <div
                   className={`flex justify-end transition-opacity duration-500 ${showUserMessage ? "opacity-100" : "opacity-0"}`}
@@ -187,7 +187,7 @@ export function ChatBot() {
                       </div>
                     ) : showBotMessage2 ? (
                       <p className="text-sm leading-relaxed">
-                        Posso ajudar mais em alguma coisa? 😊
+                        Posso ajudar em mais alguma coisa? 😊
                       </p>
                     ) : null}
                     <div className="absolute bottom-0 left-0 w-0 h-0 border-r-[12px] border-r-[#2a2a2a] border-b-[12px] border-b-transparent"></div>
@@ -199,9 +199,9 @@ export function ChatBot() {
               </div>
 
               {/* Campo de Digitação */}
-              <div className="bg-[#1f1f1f] px-2 py-2 flex items-center gap-2 border-t border-gray-700">
-                <div className="flex-1 bg-[#2a2a2a] rounded-full px-1 py-2 flex items-center gap-0.5 shadow-sm border border-gray-600">
-                  <span className="material-symbols-outlined text-gray-400 text-xs">
+              <div className="bg-[#0f172a] p-2 flex items-center border-t border-gray-700">
+                <div className="flex-1 bg-[#0f172a] rounded-full p-1 flex items-center gap-0.5 shadow-sm border border-gray-600">
+                  <span className="material-symbols-outlined text-gray-400 text-[10px]">
                     mood
                   </span>
                   <textarea
@@ -216,10 +216,10 @@ export function ChatBot() {
                       lineHeight: "1.25rem",
                     }}
                   />
-                  <span className="material-symbols-outlined text-gray-400 text-xs">
+                  <span className="material-symbols-outlined text-gray-400 text-[8px]">
                     photo_camera
                   </span>
-                  <span className="material-symbols-outlined text-gray-400 text-xs">
+                  <span className="material-symbols-outlined text-gray-400 text-[10px]">
                     mic
                   </span>
                 </div>
@@ -238,7 +238,7 @@ export function ChatBot() {
             </div>
             <h2 className="text-4xl font-extrabold mb-6 leading-tight text-white">
               Gerencie seus gastos em{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-purple-400 to-blue-500">
                 segundos
               </span>
             </h2>

@@ -57,10 +57,10 @@ export function Hero() {
               </div>
               <div className="flex items-center gap-2">
                 <span className="material-symbols-outlined text-purple-400">
-                  cloud_done
+                  devices
                 </span>
                 <span className="text-sm font-medium text-white">
-                  Sincronização em tempo real
+                  Disponível em todas as plataformas
                 </span>
               </div>
             </div>
@@ -331,7 +331,7 @@ export function Hero() {
       </div>
 
       {/* Gradiente de transição para a próxima seção */}
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-[#030712]"></div>
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-linear-to-b from-transparent to-[#030712]"></div>
     </section>
   );
 }

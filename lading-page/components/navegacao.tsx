@@ -4,16 +4,16 @@ import Link from "next/link";
 
 export function Navegacao() {
   return (
-    <nav className="fixed w-full z-50 bg-[#030712]/80 backdrop-blur-xl border-b border-white/5">
+    <nav className="fixed w-full z-50 bg-[#030712]/50 backdrop-blur-xl border-b border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-600 to-purple-700 flex items-center justify-center shadow-lg shadow-purple-500/20">
+            <div className="w-10 h-10 rounded-xl bg-linear-to-br from-purple-600 to-purple-700 flex items-center justify-center shadow-lg shadow-purple-500/20">
               <span className="material-symbols-outlined text-white text-2xl">
                 account_balance_wallet
               </span>
             </div>
-            <span className="font-bold text-2xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
+            <span className="font-bold text-2xl tracking-tight bg-clip-text text-transparent bg-linear-to-r from-white to-gray-400">
               Planejai
             </span>
           </div>
@@ -37,7 +37,7 @@ export function Navegacao() {
             >
               Planos
             </Link>
-            <div className="h-4 w-[1px] bg-white/10"></div>
+            <div className="w-px bg-gray-700"></div>
             <Link
               href="#"
               className="text-gray-400 hover:text-white transition-colors text-sm font-medium"
@@ -46,7 +46,7 @@ export function Navegacao() {
             </Link>
             <Link
               href="#"
-              className="inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold rounded-full text-white bg-gradient-to-r from-purple-600 to-purple-700 hover:scale-105 transition-all shadow-lg shadow-purple-500/20"
+              className="inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold rounded-full text-white bg-linear-to-r from-purple-600 to-purple-700 hover:scale-105 transition-all shadow-lg shadow-purple-500/20"
             >
               Começar Agora
             </Link>
