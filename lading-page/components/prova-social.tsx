@@ -1,96 +1,197 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 
 export function ProvaSocial() {
+  const [showUserMessage, setShowUserMessage] = useState(false);
+  const [userText, setUserText] = useState("");
+  const [showTyping, setShowTyping] = useState(false);
+  const [showBotMessage1, setShowBotMessage1] = useState(false);
+  const [showBotMessage2, setShowBotMessage2] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          const text = "Gastei R$ 50.00 reais no mercado hoje";
+          let i = 0;
+          const typingInterval = setInterval(() => {
+            setUserText(text.slice(0, i + 1));
+            i++;
+            if (i === text.length) {
+              clearInterval(typingInterval);
+              setTimeout(() => {
+                setShowUserMessage(true);
+                setUserText(""); // Limpar o input após envio
+                setTimeout(() => {
+                  setShowTyping(true);
+                  setTimeout(() => {
+                    setShowTyping(false);
+                    setShowBotMessage1(true);
+                    setTimeout(() => {
+                      setShowBotMessage2(true);
+                    }, 3000);
+                  }, 2000);
+                }, 1000); // Delay para mostrar digitando após envio
+              }, 500);
+            }
+          }, 100);
+        }
+      },
+      { threshold: 0.5 },
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section
+      ref={sectionRef}
       className="py-24 relative bg-[#030712] overflow-hidden"
       id="prova-social"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-        <h2 className="text-3xl font-bold mb-12 text-white">
-          Experiencia comprovada por quem entende
-        </h2>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold mb-4 text-white">
+            Controle seus gastos pelo WhatsApp
+          </h2>
+          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+            Adicione entradas e saídas diretamente pelo nosso bot no WhatsApp.
+            Simples, rápido e sempre disponível.
+          </p>
+        </div>
 
-        <div className="flex flex-wrap justify-center gap-8 md:gap-16 items-center">
-          {/* Novos Cadastros */}
-          <div className="flex flex-col items-center">
-            <div className="flex -space-x-3 mb-4 scale-125">
-              <Image
-                alt="Usuario"
-                className="w-10 h-10 rounded-full border-2 border-gray-900 object-cover"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCumfa2fdt-eh3ILCx_v_zKzZuAapnkUXV8oOnXWE22u4kptDvVis8iCJWSnPmggSIU7F8GFBK1IpbdWrvT1wnA6woo_E9kBgfBwBK0hwnZVurKVYfc0dGnyPQgIqe_5Au_W7WRjyjfUiIs2Q-NwimZC-YLJyT1hMKuFM_JS-CfaOoEuTRvZ31T4nRI6q50_4JvmAFPVEhSp5IKzGM1xcwdjjMcIZaFJELAUOzz9j9e4-o9wEJX8MlXAue0H-yZ_0e8bMLDXnxUlI0"
-                width={40}
-                height={40}
-              />
-              <Image
-                alt="Usuario"
-                className="w-10 h-10 rounded-full border-2 border-gray-900 object-cover"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6sFSXz1B7fINWtVz14o8FH9j3pgO0Ed25MumyOTvcbBsL4MSJqfPLhH2rr7cmPcg4Qji4cO1I6M7LE1a-ZRn0gW_KqTCEVovnQRvJ7euhai5jTfLYyxG-Up5dPy0epHZ4iUZd-J3YbalfFuh24ALw8NLav5A4lqyjmMoBcuWd3FvXWHvCZLTu65ymtkUc3hy8FV1YK1kjWRoql0L2BRv9StcwrHmz23Y3qOPeK4zpWCERX5pV7J0ZM_NLXrx2u93_lzjPrPaeIZzG"
-                width={40}
-                height={40}
-              />
-              <Image
-                alt="Usuario"
-                className="w-10 h-10 rounded-full border-2 border-gray-900 object-cover"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuKh9fKmvF7jsi1YSzjrWgKbE4GXulqYkJwncVrCCNextp84FrJZ0rMQ0grUUM-ELFibss9gGyHzcLLZM7ingUZuQ6EO5yv5ky1pO4c8BU4ugTeB8roCZD-uW-nwViYg_lS1YUO67Z9c2LedWa558HF0KWqHoy3VoPeM3kRv_4OMk0PmPygVR0RPCAO7KE4clthFbzsm3rvBVOGx0bH4KvxuuKOjMfZLAjEOYEKh0thnscLW1KZpuog6TVDHPS7Se11qwRgkKCvSzz"
-                width={40}
-                height={40}
-              />
-              <div className="w-10 h-10 rounded-full border-2 border-gray-900 bg-gray-800 flex items-center justify-center text-[10px] font-bold text-gray-400">
-                +500
+        <div className="flex justify-start ml-30">
+          {/* Mockup do Celular com Conversa WhatsApp */}
+          <div className="relative w-[300px] h-[600px] bg-[#020617] rounded-[3.5rem] border-[12px] border-[#1e293b] shadow-[0_0_50px_rgba(168,85,247,0.12)] overflow-hidden z-20 transform -rotate-1">
+            <div className="phone-inner h-full flex flex-col bg-[#0a0a0a]">
+              {/* Header WhatsApp */}
+              <div className="bg-[#1f1f1f] px-2 py-3 flex items-center gap-2 border-b border-gray-700">
+                <span className="material-symbols-outlined text-gray-400 text-xs">
+                  arrow_back_ios_new
+                </span>
+                <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center">
+                  <span className="material-symbols-outlined text-white text-sm">
+                    smart_toy
+                  </span>
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-white font-semibold text-sm truncate">
+                    Bot Planejai
+                  </h3>
+                  <p className="text-green-400 text-xs">Online</p>
+                </div>
+                <span className="material-symbols-outlined text-gray-400 text-sm">
+                  phone
+                </span>
+                <span className="material-symbols-outlined text-gray-400 text-sm">
+                  video_call
+                </span>
+              </div>
+
+              {/* Área de Conversa */}
+              <div className="flex-1 p-4 space-y-4 bg-[#0a0a0a]">
+                {/* Mensagem do Usuário */}
+                <div
+                  className={`flex justify-end transition-opacity duration-500 ${showUserMessage ? "opacity-100" : "opacity-0"}`}
+                >
+                  <div className="bg-[#005c4b] text-white px-3 py-2 rounded-lg max-w-[80%] relative shadow-sm">
+                    <p className="text-sm leading-relaxed">
+                      Gastei R$ 50.00 reais no mercado hoje
+                    </p>
+                    <div className="absolute bottom-0 right-0 w-0 h-0 border-l-[12px] border-l-[#005c4b] border-b-[12px] border-b-transparent"></div>
+                    <p className="text-[10px] text-gray-400 mt-1 text-right">
+                      12:34
+                    </p>
+                  </div>
+                </div>
+
+                {/* Resposta do Bot */}
+                <div className="flex justify-start">
+                  <div
+                    className={`bg-[#2a2a2a] text-white px-3 py-2 rounded-lg max-w-[80%] relative shadow-sm border border-gray-600 transition-opacity duration-500 ${showTyping || showBotMessage1 ? "opacity-100" : "opacity-0"}`}
+                  >
+                    {showTyping ? (
+                      <div className="flex items-center gap-1">
+                        <div className="flex gap-1">
+                          <div
+                            className="w-2 h-2 bg-gray-400 rounded-full animate-pulse"
+                            style={{ animationDelay: "0ms" }}
+                          ></div>
+                          <div
+                            className="w-2 h-2 bg-gray-400 rounded-full animate-pulse"
+                            style={{ animationDelay: "200ms" }}
+                          ></div>
+                          <div
+                            className="w-2 h-2 bg-gray-400 rounded-full animate-pulse"
+                            style={{ animationDelay: "400ms" }}
+                          ></div>
+                        </div>
+                      </div>
+                    ) : showBotMessage1 ? (
+                      <p className="text-sm leading-relaxed">
+                        ✅ Gasto adicionado com sucesso!
+                        <br />
+                        <strong>Categoria:</strong> Alimentação
+                        <br />
+                        <strong>Valor:</strong> R$ 50,00
+                        <br />
+                        <strong>Data:</strong> Hoje
+                        <br />
+                        <br />
+                        Seu saldo mensal foi atualizado. 💰
+                      </p>
+                    ) : null}
+                    <div className="absolute bottom-0 left-0 w-0 h-0 border-r-[12px] border-r-[#2a2a2a] border-b-[12px] border-b-transparent"></div>
+                    {showBotMessage1 && (
+                      <p className="text-[10px] text-gray-400 mt-1">12:35</p>
+                    )}
+                  </div>
+                </div>
+
+                {/* Outra Resposta do Bot */}
+                <div
+                  className={`flex justify-start transition-opacity duration-500 ${showBotMessage2 ? "opacity-100" : "opacity-0"}`}
+                >
+                  <div className="bg-[#2a2a2a] text-white px-3 py-2 rounded-lg max-w-[80%] relative shadow-sm border border-gray-600">
+                    <p className="text-sm leading-relaxed">
+                      Posso ajudar mais em alguma coisa? 😊
+                    </p>
+                    <div className="absolute bottom-0 left-0 w-0 h-0 border-r-[12px] border-r-[#2a2a2a] border-b-[12px] border-b-transparent"></div>
+                    <p className="text-[10px] text-gray-400 mt-1">12:36</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Campo de Digitação */}
+              <div className="bg-[#1f1f1f] px-4 py-2 flex items-center gap-2 border-t border-gray-700">
+                <div className="flex-1 bg-[#2a2a2a] rounded-full px-2 py-2 flex items-center gap-1 shadow-sm border border-gray-600">
+                  <span className="material-symbols-outlined text-gray-400 text-sm">
+                    mood
+                  </span>
+                  <textarea
+                    value={userText}
+                    placeholder="Digite uma mensagem"
+                    className="flex-1 bg-transparent text-white text-sm outline-none resize-none"
+                    readOnly
+                    rows={1}
+                    style={{ minHeight: "1.25rem", overflow: "hidden" }}
+                  />
+                  <span className="material-symbols-outlined text-gray-400 text-sm">
+                    photo_camera
+                  </span>
+                  <span className="material-symbols-outlined text-gray-400 text-sm">
+                    mic
+                  </span>
+                </div>
               </div>
             </div>
-            <p className="text-gray-400 text-sm">Novos cadastros hoje</p>
-          </div>
-
-          <div className="h-12 w-[1px] bg-white/10 hidden md:block"></div>
-
-          {/* Avaliacao */}
-          <div className="text-center">
-            <p className="text-4xl font-extrabold text-white mb-1">4.9/5</p>
-            <div className="flex justify-center text-yellow-500 mb-1">
-              <span
-                className="material-symbols-outlined"
-                style={{ fontVariationSettings: "'FILL' 1" }}
-              >
-                star
-              </span>
-              <span
-                className="material-symbols-outlined"
-                style={{ fontVariationSettings: "'FILL' 1" }}
-              >
-                star
-              </span>
-              <span
-                className="material-symbols-outlined"
-                style={{ fontVariationSettings: "'FILL' 1" }}
-              >
-                star
-              </span>
-              <span
-                className="material-symbols-outlined"
-                style={{ fontVariationSettings: "'FILL' 1" }}
-              >
-                star
-              </span>
-              <span
-                className="material-symbols-outlined"
-                style={{ fontVariationSettings: "'FILL' 1" }}
-              >
-                star
-              </span>
-            </div>
-            <p className="text-gray-400 text-sm">App Store e Play Store</p>
-          </div>
-
-          <div className="h-12 w-[1px] bg-white/10 hidden md:block"></div>
-
-          {/* Total Monitorado */}
-          <div className="text-center">
-            <p className="text-4xl font-extrabold text-white mb-1">R$ 50M+</p>
-            <p className="text-gray-400 text-sm">Monitorados pelo Planejai</p>
           </div>
         </div>
       </div>
