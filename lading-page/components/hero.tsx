@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-export function Heroi() {
+export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center pt-24 pb-20 overflow-hidden bg-grid">
       <div className="hero-glow-1"></div>
@@ -13,37 +13,7 @@ export function Heroi() {
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-8">
           {/* Conteudo Esquerdo */}
           <div className="lg:w-1/2 text-center lg:text-left">
-            {/* Badge de Confianca */}
-            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-md">
-              <div className="flex -space-x-2">
-                <Image
-                  alt="Usuario"
-                  className="w-7 h-7 rounded-full border-2 border-[#030712] object-cover"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbiVDd64KqWHzR0VMz-qzjNv88RqDnDb4e7m23MdKqWP7DpJz4MhN-iV81iF3_q77aUw6FB7C0Bbeccio0dCcQhe6H5uq6pIJHCaQErgdzBeD4nRL5YduDOgKn9Ttj0uFAZ9le-isJ2BfiN6Fzc3vNP-EqdGIwbSw6i4tkHJOGqAaKo5zEbZ9L3csY-orsR9tZBVfdWE68r5B7_J4wHeA57DdbFEaoPN5rCDigRmfMPInDqSP-qndJiD3xW63Ep7kO4fiLLF2-kFpi"
-                  width={28}
-                  height={28}
-                />
-                <Image
-                  alt="Usuario"
-                  className="w-7 h-7 rounded-full border-2 border-[#030712] object-cover"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE1ac8FTyuYqsd3k8u_5Cr1XB621Y_nLhaX-oPsGHUO420zhp60s3D_hZMXEOlGQdxr5H9wmYrcXbfy6uKb_bhupC-AR2BVNjmoz7YVWK66gAcshrJsD0YUn8TLAKP5ng7gZBi4H7B5H6XVr7Y8CCwlpLXYTQR0yjeTLMaMSfkDZ7wBWwX22eP_bhmpH7QD629KkRPIxeTiuInwoWbUk5mowU5QodF3Uzx4T1Gb4-afhkKOs3p0Bunz83Xc5ckWcezN4SDeHSctGX8"
-                  width={28}
-                  height={28}
-                />
-                <Image
-                  alt="Usuario"
-                  className="w-7 h-7 rounded-full border-2 border-[#030712] object-cover"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-EsjmPK-GEmcPVDi-WbdgSkvzekWigDFKyAM5jdLcPWr_GDmqPcNe528ZMK9J4j0R9Qbv4dJk9KbGsLYx1FtdOgTnWxEud2oUhMCvV54huAaq7-WGcX_UkVK8fsSWh1gPlqWViSN2NdmTnw1cFXOqRD_SWPJCmhlENfVTJtMXArThl0mFrYw6cbbbOsq3EhsjyAi08I4p_ZA4tn1fV5uyNvrVdrFAt8-fS_1yw19Ng05y_0Fge2IsOzeXe50ebptwoX-4YqKCif12"
-                  width={28}
-                  height={28}
-                />
-              </div>
-              <span className="text-xs font-semibold text-gray-400 tracking-wide">
-                Confiado por <span className="text-purple-400">+12.000</span>{" "}
-                usuarios ativos
-              </span>
-            </div>
-
+           
             {/* Titulo Principal */}
             <h1 className="text-5xl md:text-6xl lg:text-[5.5rem] font-extrabold tracking-tight mb-8 leading-[1] text-white">
               Planeje Seu <br />{" "}
@@ -63,7 +33,7 @@ export function Heroi() {
                 href="#"
                 className="inline-flex items-center justify-center px-10 py-4 text-lg font-bold rounded-2xl text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:opacity-90 shadow-2xl shadow-blue-500/20 transition-all transform hover:-translate-y-1"
               >
-                Abrir Planejai Premium
+                Começar Agora
                 <span className="material-symbols-outlined ml-2">
                   rocket_launch
                 </span>
@@ -83,7 +53,7 @@ export function Heroi() {
                   verified_user
                 </span>
                 <span className="text-sm font-medium text-white">
-                  Criptografia Ponta-a-Ponta
+                  Totalmente Seguro
                 </span>
               </div>
               <div className="flex items-center gap-2">
@@ -91,7 +61,7 @@ export function Heroi() {
                   cloud_done
                 </span>
                 <span className="text-sm font-medium text-white">
-                  Backup em Tempo Real
+                   Sincronização em tempo real
                 </span>
               </div>
             </div>

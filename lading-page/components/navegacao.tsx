@@ -26,10 +26,10 @@ export function Navegacao() {
               Recursos
             </Link>
             <Link
-              href="#prova-social"
+              href="#chat-bot"
               className="text-gray-400 hover:text-white transition-colors text-sm font-medium"
             >
-              Comunidade
+              Chat Bot
             </Link>
             <Link
               href="#"

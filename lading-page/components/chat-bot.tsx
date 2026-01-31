@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-export function ProvaSocial() {
+export function ChatBot() {
   const [showUserMessage, setShowUserMessage] = useState(false);
   const [userText, setUserText] = useState("");
   const [showTyping, setShowTyping] = useState(false);
@@ -39,13 +39,13 @@ export function ProvaSocial() {
                       setTimeout(() => {
                         setShowTyping2(false);
                         setShowBotMessage2(true);
-                      }, 2000);
-                    }, 1000);
-                  }, 2000);
-                }, 1000); // Delay para mostrar digitando após envio
-              }, 500);
+                      }, 800);
+                    }, 400);
+                  }, 800);
+                }, 400); // Delay para mostrar digitando após envio
+              }, 400);
             }
-          }, 100);
+          }, 30); // Velocidade de digitação aumentada para 50ms
         }
       },
       { threshold: 0.5 },
@@ -61,7 +61,7 @@ export function ProvaSocial() {
   return (
     <section
       ref={sectionRef}
-      className="py-24 relative bg-[#030712] overflow-hidden"
+      className="py-8 relative bg-[#030712] overflow-hidden"
       id="prova-social"
     >
       <style>{`
@@ -72,18 +72,12 @@ export function ProvaSocial() {
       `}</style>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4 text-white">
-            Controle seus gastos pelo WhatsApp
-          </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            Adicione entradas e saídas diretamente pelo nosso bot no WhatsApp.
-            Simples, rápido e sempre disponível.
-          </p>
+          {/* Título e parágrafo removidos */}
         </div>
 
-        <div className="flex justify-start ml-30">
+        <div className="flex justify-between items-center">
           {/* Mockup do Celular com Conversa WhatsApp */}
-          <div className="relative w-[300px] h-[600px] bg-[#020617] rounded-[3.5rem] border-[12px] border-[#1e293b] shadow-[0_0_50px_rgba(168,85,247,0.12)] overflow-hidden z-20 transform -rotate-1">
+          <div className="relative w-[300px] h-[600px] bg-[#020617] rounded-[3.5rem] border-[12px] border-[#1e293b] shadow-[0_0_50px_rgba(168,85,247,0.12)] overflow-hidden z-20 transform -rotate-1 ml-30">
             <div className="phone-inner h-full flex flex-col bg-[#0a0a0a]">
               {/* Header WhatsApp */}
               <div className="bg-[#1f1f1f] px-2 py-3 flex items-center gap-2 border-b border-gray-700">
@@ -230,6 +224,87 @@ export function ProvaSocial() {
                   </span>
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* Conteúdo Direito */}
+          <div className="lg:w-1/2 text-center lg:text-left mr-10">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 text-xs font-bold uppercase tracking-wider mb-6 w-fit">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-purple-400"></span>
+              </span>
+              Inteligente e Simples
+            </div>
+            <h2 className="text-4xl font-extrabold mb-6 leading-tight text-white">
+              Gerencie seus gastos em{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">
+                segundos
+              </span>
+            </h2>
+            <p className="text-gray-400 text-lg mb-12 max-w-xl">
+              Esqueça planilhas complicadas. Use o nosso bot para registrar suas
+              finanças através de conversas naturais, de forma rápida e sempre
+              disponível.
+            </p>
+
+            <div className="space-y-8 relative">
+              <div className="absolute left-6 top-8 bottom-8 w-px bg-gray-700"></div>
+
+              <div className="flex gap-6 relative group">
+                <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-purple-500 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform z-10">
+                  <span className="material-symbols-outlined">chat</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold mb-2 text-white">
+                    1. Mande uma mensagem
+                  </h3>
+                  <p className="text-gray-400 leading-relaxed">
+                    Diga o que você comprou e quanto custou, como se estivesse
+                    conversando com um amigo.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-6 relative group">
+                <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-blue-500 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform z-10">
+                  <span className="material-symbols-outlined">query_stats</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold mb-2 text-white">
+                    2. O bot processa os dados
+                  </h3>
+                  <p className="text-gray-400 leading-relaxed">
+                    Nossa IA identifica automaticamente a categoria e o valor,
+                    organizando tudo para você.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-6 relative group">
+                <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-indigo-500 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform z-10">
+                  <span className="material-symbols-outlined">insights</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold mb-2 text-white">
+                    3. Veja seus gráficos
+                  </h3>
+                  <p className="text-gray-400 leading-relaxed">
+                    Acompanhe sua saúde financeira através de relatórios
+                    detalhados e fáceis de entender.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-12">
+              <button className="bg-purple-500 hover:bg-purple-600 text-white px-10 py-4 rounded-2xl text-lg font-bold transition-all shadow-xl glow-purple flex items-center gap-3 hover:-translate-y-1">
+                Começar Agora
+                <span className="material-symbols-outlined">arrow_forward</span>
+              </button>
+              <p className="mt-4 text-sm text-gray-400 px-2">
+                Grátis para começar. Sem cartão de crédito.
+              </p>
             </div>
           </div>
         </div>
