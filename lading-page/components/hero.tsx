@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-24 pb-20 overflow-hidden bg-grid">
+    <section className="relative min-h-screen flex items-center pt-24 overflow-hidden bg-grid pb-0">
       <div className="hero-glow-1"></div>
       <div className="hero-glow-2"></div>
 
@@ -331,7 +331,7 @@ export function Hero() {
       </div>
 
       {/* Gradiente de transição para a próxima seção */}
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-linear-to-b from-transparent to-[#030712]"></div>
+      <div className="absolute bottom-0 left-0 w-full h-10 bg-linear-to-b from-transparent to-[#030712]"></div>
     </section>
   );
 }

@@ -24,81 +24,90 @@ export function Rodape() {
             </p>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-white font-semibold mb-4">Links Rápidos</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  href="#hero"
-                  className="text-gray-400 hover:text-purple-400 transition-colors text-sm"
-                >
-                  Início
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#recursos"
-                  className="text-gray-400 hover:text-purple-400 transition-colors text-sm"
-                >
-                  Recursos
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#prova-social"
-                  className="text-gray-400 hover:text-purple-400 transition-colors text-sm"
-                >
-                  Como Funciona
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#contato"
-                  className="text-gray-400 hover:text-purple-400 transition-colors text-sm"
-                >
-                  Contato
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Social & Legal */}
-          <div>
-            <h3 className="text-white font-semibold mb-4">Conecte-se</h3>
-            <div className="flex gap-3 mb-4">
-              <a
-                href="#"
-                className="w-8 h-8 bg-purple-600/10 hover:bg-purple-600/20 rounded-lg flex items-center justify-center text-purple-400 hover:text-purple-300 transition-all hover:scale-110"
-              >
-                <span className="material-symbols-outlined text-sm">share</span>
-              </a>
-              <a
-                href="#"
-                className="w-8 h-8 bg-purple-600/10 hover:bg-purple-600/20 rounded-lg flex items-center justify-center text-purple-400 hover:text-purple-300 transition-all hover:scale-110"
-              >
-                <span className="material-symbols-outlined text-sm">mail</span>
-              </a>
-              <a
-                href="#"
-                className="w-8 h-8 bg-purple-600/10 hover:bg-purple-600/20 rounded-lg flex items-center justify-center text-purple-400 hover:text-purple-300 transition-all hover:scale-110"
-              >
-                <span className="material-symbols-outlined text-sm">phone</span>
-              </a>
+          {/* Agrupamento para mobile: Links Rápidos + Conecte-se */}
+          <div className="grid grid-cols-2 gap-6 md:contents">
+            {/* Quick Links */}
+            <div>
+              <h3 className="text-white font-semibold mb-4">Links Rápidos</h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link
+                    href="#hero"
+                    className="text-gray-400 hover:text-purple-400 transition-colors text-sm"
+                  >
+                    Início
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#recursos"
+                    className="text-gray-400 hover:text-purple-400 transition-colors text-sm"
+                  >
+                    Recursos
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#prova-social"
+                    className="text-gray-400 hover:text-purple-400 transition-colors text-sm"
+                  >
+                    Como Funciona
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#contato"
+                    className="text-gray-400 hover:text-purple-400 transition-colors text-sm"
+                  >
+                    Contato
+                  </Link>
+                </li>
+              </ul>
             </div>
-            <div className="space-y-2">
-              <Link
-                href="#"
-                className="block text-gray-400 hover:text-purple-400 transition-colors text-sm"
-              >
-                Política de Privacidade
-              </Link>
-              <Link
-                href="#"
-                className="block text-gray-400 hover:text-purple-400 transition-colors text-sm"
-              >
-                Termos de Uso
-              </Link>
+
+            {/* Social & Legal */}
+            <div>
+              <h3 className="text-white font-semibold mb-4">Conecte-se</h3>
+              <div className="flex gap-3 mb-4">
+                <a
+                  href="#"
+                  className="w-8 h-8 bg-purple-600/10 hover:bg-purple-600/20 rounded-lg flex items-center justify-center text-purple-400 hover:text-purple-300 transition-all hover:scale-110"
+                >
+                  <span className="material-symbols-outlined text-sm">
+                    share
+                  </span>
+                </a>
+                <a
+                  href="#"
+                  className="w-8 h-8 bg-purple-600/10 hover:bg-purple-600/20 rounded-lg flex items-center justify-center text-purple-400 hover:text-purple-300 transition-all hover:scale-110"
+                >
+                  <span className="material-symbols-outlined text-sm">
+                    mail
+                  </span>
+                </a>
+                <a
+                  href="#"
+                  className="w-8 h-8 bg-purple-600/10 hover:bg-purple-600/20 rounded-lg flex items-center justify-center text-purple-400 hover:text-purple-300 transition-all hover:scale-110"
+                >
+                  <span className="material-symbols-outlined text-sm">
+                    phone
+                  </span>
+                </a>
+              </div>
+              <div className="space-y-2">
+                <Link
+                  href="#"
+                  className="block text-gray-400 hover:text-purple-400 transition-colors text-sm"
+                >
+                  Política de Privacidade
+                </Link>
+                <Link
+                  href="#"
+                  className="block text-gray-400 hover:text-purple-400 transition-colors text-sm"
+                >
+                  Termos de Uso
+                </Link>
+              </div>
             </div>
           </div>
         </div>

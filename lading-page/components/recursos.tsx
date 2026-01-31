@@ -59,7 +59,7 @@ export function Recursos() {
   };
 
   return (
-    <section className="py-32 relative bg-[#030712]" id="recursos">
+    <section className="pt-20 pb-40 relative bg-[#030712]" id="recursos">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Cabecalho */}
         <div className="mb-20">

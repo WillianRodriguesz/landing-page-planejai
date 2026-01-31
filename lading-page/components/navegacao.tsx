@@ -90,10 +90,10 @@ export function Navegacao() {
               </Link>
               <Link
                 href="#"
-                className="inline-flex items-center justify-center w-full px-6 py-3 text-sm font-bold rounded-full text-white bg-gradient-to-r from-purple-600 to-purple-700 hover:scale-105 transition-all shadow-lg shadow-purple-500/20"
+                className="block text-gray-400 hover:text-white transition-colors text-sm font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Começar Agora
+                Registrar
               </Link>
             </div>
           </div>

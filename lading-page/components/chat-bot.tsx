@@ -115,7 +115,7 @@ export function ChatBot() {
   return (
     <section
       ref={sectionRef}
-      className="py-8 relative bg-[#030712] overflow-hidden"
+      className=" relative bg-[#030712] overflow-hidden"
       id="prova-social"
     >
       <style>{`
@@ -124,8 +124,8 @@ export function ChatBot() {
           line-height: 2.5rem;
         }
       `}</style>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mt-[-32px]">
+        <div className="text-center mb-8">
           {/* Título e parágrafo removidos */}
         </div>
 
