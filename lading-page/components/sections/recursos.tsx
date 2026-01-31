@@ -1,7 +1,7 @@
 "use client";
-import { useScrollReveal } from "./useScrollReveal";
+import { useScrollReveal } from "../../hooks/useScrollReveal";
 import { useRef, useEffect, useState } from "react";
-import "./scrollRevealAnimations.css";
+import "../../styles/scrollRevealAnimations.css";
 
 export function Recursos() {
   const recursos = [

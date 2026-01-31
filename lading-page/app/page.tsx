@@ -1,8 +1,8 @@
-import { Hero } from "@/components/hero";
-import { Navegacao } from "@/components/navegacao";
-import { ChatBot } from "@/components/chat-bot";
-import { Recursos } from "@/components/recursos";
-import { Rodape } from "@/components/rodape";
+import { Hero } from "@/components/sections/hero";
+import { Navegacao } from "@/components/sections/navegacao";
+import { ChatBot } from "@/components/sections/chat-bot";
+import { Recursos } from "@/components/sections/recursos";
+import { Rodape } from "@/components/sections/rodape";
 
 export default function Pagina() {
   return (

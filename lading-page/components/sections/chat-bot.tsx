@@ -1,5 +1,5 @@
 "use client";
-import "./etapasBarra.css";
+import "../../styles/etapasBarra.css";
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";

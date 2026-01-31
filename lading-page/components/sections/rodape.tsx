@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useScrollReveal } from "./useScrollReveal";
-import "./scrollRevealAnimations.css";
+import { useScrollReveal } from "../../hooks/useScrollReveal";
+import "../../styles/scrollRevealAnimations.css";
 
 export function Rodape() {
   const { ref, revealed } = useScrollReveal({ threshold: 0.15, repeat: true });
