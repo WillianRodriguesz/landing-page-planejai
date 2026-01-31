@@ -69,7 +69,7 @@ export function Hero() {
           {/* Conteudo Direito - Mockup do Celular */}
           <div className="lg:w-1/2 relative flex justify-center mockup-container">
             {/* Card Flutuante Esquerdo */}
-            <div className="absolute -left-12 top-20 z-30 neon-card neon-purple-glow p-5 rounded-3xl w-48 animate-float-slow">
+            <div className="absolute -left-12 top-20 z-30 neon-card neon-purple-glow p-5 rounded-3xl w-48 animate-float-slow hidden lg:block">
               <div className="flex items-center gap-3 mb-3">
                 <div className="w-10 h-10 rounded-xl bg-blue-500/20 flex items-center justify-center">
                   <span className="material-symbols-outlined text-blue-400">
@@ -85,7 +85,7 @@ export function Hero() {
             </div>
 
             {/* Card Flutuante Direito */}
-            <div className="absolute -right-8 bottom-24 z-30 neon-card neon-purple-glow p-5 rounded-3xl w-52 animate-float-medium">
+            <div className="absolute -right-8 bottom-24 z-30 neon-card neon-purple-glow p-5 rounded-3xl w-52 animate-float-medium hidden lg:block">
               <div className="flex items-center gap-3 mb-3">
                 <div className="w-10 h-10 rounded-xl bg-purple-500/20 flex items-center justify-center">
                   <span className="material-symbols-outlined text-purple-400">

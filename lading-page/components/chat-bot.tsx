@@ -198,28 +198,36 @@ export function ChatBot() {
                 </div>
               </div>
 
-              {/* Campo de Digitação */}
               <div className="bg-[#0f172a] p-2 flex items-center border-t border-gray-700">
-                <div className="flex-1 bg-[#0f172a] rounded-full p-1 flex items-center gap-0.5 shadow-sm border border-gray-600">
-                  <span className="material-symbols-outlined text-gray-400 text-[10px]">
+                <div className="flex-1 bg-[#0f172a] rounded-full p-1 px-2 flex items-center gap-0.5 shadow-sm border border-gray-600">
+                  <span
+                    className="material-symbols-outlined text-gray-400"
+                    style={{ fontSize: "20px" }}
+                  >
                     mood
                   </span>
                   <textarea
                     value={userText}
                     placeholder="Digite uma mensagem"
-                    className="flex-1 bg-transparent text-white text-sm outline-none resize-none self-center"
+                    className={`flex-1 bg-transparent text-white outline-none resize-none self-center ${userText ? "text-xs" : "text-sm"}`}
                     readOnly
                     rows={2}
                     style={{
-                      minHeight: "1.25rem",
+                      minHeight: "1.4rem",
                       overflow: "hidden",
-                      lineHeight: "1.25rem",
+                      lineHeight: "1.20rem",
                     }}
                   />
-                  <span className="material-symbols-outlined text-gray-400 text-[8px]">
+                  <span
+                    className="material-symbols-outlined text-gray-400"
+                    style={{ fontSize: "20px" }}
+                  >
                     photo_camera
                   </span>
-                  <span className="material-symbols-outlined text-gray-400 text-[10px]">
+                  <span
+                    className="material-symbols-outlined text-gray-400"
+                    style={{ fontSize: "20px" }}
+                  >
                     mic
                   </span>
                 </div>

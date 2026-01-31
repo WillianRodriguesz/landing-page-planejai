@@ -82,7 +82,7 @@ export function Recursos() {
             return (
               <div
                 key={indice}
-                className={`p-10 rounded-[2.5rem] bg-white/5 border border-white/10 ${cores.bordaHover} hover:bg-white/[0.08] transition-all duration-500 group relative overflow-hidden hover:shadow-2xl hover:shadow-purple-500/10 hover:-translate-y-2 hover:rotate-1`}
+                className={`p-6 md:p-10 rounded-[2.5rem] bg-white/5 border border-white/10 ${cores.bordaHover} hover:bg-white/[0.08] transition-all duration-500 group relative overflow-hidden hover:shadow-2xl hover:shadow-purple-500/10 hover:-translate-y-2 hover:rotate-1`}
                 onMouseMove={(e) => {
                   const card = e.currentTarget;
                   const rect = card.getBoundingClientRect();
