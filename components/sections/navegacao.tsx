@@ -26,6 +26,12 @@ export function Navegacao() {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-10">
             <Link
+              href="#"
+              className="text-gray-400 hover:text-white transition-colors text-sm font-medium"
+            >
+              Inicio
+            </Link>
+            <Link
               href="#recursos"
               className="text-gray-400 hover:text-white transition-colors text-sm font-medium"
             >
@@ -40,13 +46,17 @@ export function Navegacao() {
 
             <div className="w-px bg-gray-700"></div>
             <Link
-              href="#"
+              href="https://app.planejai.cloud/login"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition-colors text-sm font-medium"
             >
               Login
             </Link>
             <Link
-              href="#"
+              href="https://app.planejai.cloud/registro"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold rounded-full text-white bg-linear-to-r from-purple-600 to-purple-700 hover:scale-105 transition-all shadow-lg shadow-purple-500/20"
             >
               Começar Agora
@@ -69,6 +79,13 @@ export function Navegacao() {
           <div className="md:hidden bg-[#030712]/90 backdrop-blur-xl border-t border-white/10">
             <div className="px-4 py-6 space-y-4">
               <Link
+                href="#"
+                className="block text-gray-400 hover:text-white transition-colors text-sm font-medium"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Inicio
+              </Link>
+              <Link
                 href="#recursos"
                 className="block text-gray-400 hover:text-white transition-colors text-sm font-medium"
                 onClick={() => setIsMenuOpen(false)}
@@ -84,14 +101,18 @@ export function Navegacao() {
               </Link>
               <div className="w-full h-px bg-gray-700"></div>
               <Link
-                href="#"
+                href="https://app.planejai.cloud/login"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block text-gray-400 hover:text-white transition-colors text-sm font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Login
               </Link>
               <Link
-                href="#"
+                href="https://app.planejai.cloud/registro"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block text-gray-400 hover:text-white transition-colors text-sm font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >

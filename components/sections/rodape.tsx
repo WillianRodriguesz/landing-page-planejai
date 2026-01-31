@@ -90,7 +90,9 @@ export function Rodape() {
               <h3 className="text-white font-semibold mb-4">Conecte-se</h3>
               <div className="flex gap-3 mb-4">
                 <a
-                  href="#"
+                  href="https://github.com/WillianRodriguesz"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-8 h-8 bg-purple-600/10 hover:bg-purple-600/20 rounded-lg flex items-center justify-center text-purple-400 hover:text-purple-300 transition-all hover:scale-110"
                 >
                   <svg
@@ -103,7 +105,9 @@ export function Rodape() {
                   </svg>
                 </a>
                 <a
-                  href="#"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=willianrdriguesz@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-8 h-8 bg-purple-600/10 hover:bg-purple-600/20 rounded-lg flex items-center justify-center text-purple-400 hover:text-purple-300 transition-all hover:scale-110"
                 >
                   <span className="material-symbols-outlined text-sm">
@@ -111,7 +115,9 @@ export function Rodape() {
                   </span>
                 </a>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/willianrdrigues/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-8 h-8 bg-purple-600/10 hover:bg-purple-600/20 rounded-lg flex items-center justify-center text-purple-400 hover:text-purple-300 transition-all hover:scale-110"
                 >
                   <svg

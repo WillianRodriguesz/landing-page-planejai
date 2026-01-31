@@ -34,7 +34,9 @@ export function Hero() {
             {/* Botoes CTA */}
             <div className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start">
               <Link
-                href="#"
+                href="https://app.planejai.cloud/registro"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-10 py-4 text-lg font-bold rounded-2xl text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:opacity-90 shadow-2xl shadow-blue-500/20 transition-all transform hover:-translate-y-1"
               >
                 Começar Agora

@@ -9,16 +9,24 @@ export function ChatBot() {
   // Animação das etapas
   const [etapa, setEtapa] = useState(0);
   useEffect(() => {
-    let timeout1: any, timeout2: any, timeout3: any;
-    setEtapa(0);
-    timeout1 = setTimeout(() => setEtapa(1), 1200);
-    timeout2 = setTimeout(() => setEtapa(2), 2400);
-    timeout3 = setTimeout(() => setEtapa(3), 3600);
-    return () => {
-      clearTimeout(timeout1);
-      clearTimeout(timeout2);
-      clearTimeout(timeout3);
-    };
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          observer.disconnect();
+          setTimeout(() => {
+            setEtapa(0);
+            setTimeout(() => setEtapa(1), 1000);
+            setTimeout(() => setEtapa(2), 2000);
+            setTimeout(() => setEtapa(3), 3000);
+          }, 2000); // Aguarda 2s antes de começar
+        }
+      },
+      { threshold: 0.5 },
+    );
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+    return () => observer.disconnect();
   }, []);
   // Estados para animação DESKTOP
   const [showUserMessage, setShowUserMessage] = useState(false);

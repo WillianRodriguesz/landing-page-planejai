@@ -15,9 +15,9 @@ export const metadata: Metadata = {
   description:
     "A experiência definitiva em gestão pessoal. Planeje metas, acompanhe gastos e veja seu patrimônio crescer.",
   icons: {
-    icon: "/logo-planejai.ico",
-    shortcut: "/logo-planejai.ico",
-    apple: "/logo-planejai.ico",
+    icon: "/image/logo-planejai.ico",
+    shortcut: "/image/logo-planejai.ico",
+    apple: "/image/logo-planejai.ico",
   },
 };
 
