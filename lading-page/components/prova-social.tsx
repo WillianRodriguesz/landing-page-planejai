@@ -7,6 +7,7 @@ export function ProvaSocial() {
   const [showUserMessage, setShowUserMessage] = useState(false);
   const [userText, setUserText] = useState("");
   const [showTyping, setShowTyping] = useState(false);
+  const [showTyping2, setShowTyping2] = useState(false);
   const [showBotMessage1, setShowBotMessage1] = useState(false);
   const [showBotMessage2, setShowBotMessage2] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
@@ -31,8 +32,12 @@ export function ProvaSocial() {
                     setShowTyping(false);
                     setShowBotMessage1(true);
                     setTimeout(() => {
-                      setShowBotMessage2(true);
-                    }, 3000);
+                      setShowTyping2(true);
+                      setTimeout(() => {
+                        setShowTyping2(false);
+                        setShowBotMessage2(true);
+                      }, 2000);
+                    }, 1000);
                   }, 2000);
                 }, 1000); // Delay para mostrar digitando após envio
               }, 500);
@@ -156,15 +161,36 @@ export function ProvaSocial() {
                 </div>
 
                 {/* Outra Resposta do Bot */}
-                <div
-                  className={`flex justify-start transition-opacity duration-500 ${showBotMessage2 ? "opacity-100" : "opacity-0"}`}
-                >
-                  <div className="bg-[#2a2a2a] text-white px-3 py-2 rounded-lg max-w-[80%] relative shadow-sm border border-gray-600">
-                    <p className="text-sm leading-relaxed">
-                      Posso ajudar mais em alguma coisa? 😊
-                    </p>
+                <div className="flex justify-start">
+                  <div
+                    className={`bg-[#2a2a2a] text-white px-3 py-2 rounded-lg max-w-[80%] relative shadow-sm border border-gray-600 transition-opacity duration-500 ${showTyping2 || showBotMessage2 ? "opacity-100" : "opacity-0"}`}
+                  >
+                    {showTyping2 ? (
+                      <div className="flex items-center gap-1">
+                        <div className="flex gap-1">
+                          <div
+                            className="w-2 h-2 bg-gray-400 rounded-full animate-pulse"
+                            style={{ animationDelay: "0ms" }}
+                          ></div>
+                          <div
+                            className="w-2 h-2 bg-gray-400 rounded-full animate-pulse"
+                            style={{ animationDelay: "200ms" }}
+                          ></div>
+                          <div
+                            className="w-2 h-2 bg-gray-400 rounded-full animate-pulse"
+                            style={{ animationDelay: "400ms" }}
+                          ></div>
+                        </div>
+                      </div>
+                    ) : showBotMessage2 ? (
+                      <p className="text-sm leading-relaxed">
+                        Posso ajudar mais em alguma coisa? 😊
+                      </p>
+                    ) : null}
                     <div className="absolute bottom-0 left-0 w-0 h-0 border-r-[12px] border-r-[#2a2a2a] border-b-[12px] border-b-transparent"></div>
-                    <p className="text-[10px] text-gray-400 mt-1">12:36</p>
+                    {showBotMessage2 && (
+                      <p className="text-[10px] text-gray-400 mt-1">12:36</p>
+                    )}
                   </div>
                 </div>
               </div>
