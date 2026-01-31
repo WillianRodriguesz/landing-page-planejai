@@ -42,6 +42,7 @@ export function ChatBot() {
 
   // Animação DESKTOP
   useEffect(() => {
+    let resetTimeout: any, restartTimeout: any;
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting && !hasAnimated) {
@@ -49,31 +50,46 @@ export function ChatBot() {
           observer.disconnect();
           const text = "Gastei R$ 50.00 reais no mercado hoje";
           let i = 0;
-          const typingInterval = setInterval(() => {
-            setUserText(text.slice(0, i + 1));
-            i++;
-            if (i === text.length) {
-              clearInterval(typingInterval);
-              setTimeout(() => {
-                setShowUserMessage(true);
-                setUserText(""); // Limpar o input após envio
+          const startTyping = () => {
+            const typingInterval = setInterval(() => {
+              setUserText(text.slice(0, i + 1));
+              i++;
+              if (i === text.length) {
+                clearInterval(typingInterval);
                 setTimeout(() => {
-                  setShowTyping(true);
+                  setShowUserMessage(true);
+                  setUserText(""); // Limpar o input após envio
                   setTimeout(() => {
-                    setShowTyping(false);
-                    setShowBotMessage1(true);
+                    setShowTyping(true);
                     setTimeout(() => {
-                      setShowTyping2(true);
+                      setShowTyping(false);
+                      setShowBotMessage1(true);
                       setTimeout(() => {
-                        setShowTyping2(false);
-                        setShowBotMessage2(true);
-                      }, 800);
-                    }, 400);
-                  }, 800);
-                }, 400); // Delay para mostrar digitando após envio
-              }, 400);
-            }
-          }, 30);
+                        setShowTyping2(true);
+                        setTimeout(() => {
+                          setShowTyping2(false);
+                          setShowBotMessage2(true);
+                          // Aguarda 4s e reinicia animação
+                          resetTimeout = setTimeout(() => {
+                            setShowUserMessage(false);
+                            setShowTyping(false);
+                            setShowBotMessage1(false);
+                            setShowTyping2(false);
+                            setShowBotMessage2(false);
+                            // Aguarda mais tempo antes de reiniciar a digitação
+                            restartTimeout = setTimeout(() => {
+                              setHasAnimated(false);
+                            }, 1200); // 1.2s extra
+                          }, 4000);
+                        }, 800);
+                      }, 400);
+                    }, 800);
+                  }, 400); // Delay para mostrar digitando após envio
+                }, 400);
+              }
+            }, 30);
+          };
+          startTyping();
         }
       },
       { threshold: 0.5 },
@@ -81,11 +97,16 @@ export function ChatBot() {
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
-    return () => observer.disconnect();
-  }, []);
+    return () => {
+      observer.disconnect();
+      clearTimeout(resetTimeout);
+      clearTimeout(restartTimeout);
+    };
+  }, [hasAnimated]);
 
   // Animação MOBILE
   useEffect(() => {
+    let resetTimeout: any, restartTimeout: any;
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting && !hasAnimatedMobile) {
@@ -93,31 +114,46 @@ export function ChatBot() {
           observer.disconnect();
           const text = "Gastei R$ 50.00 reais no mercado hoje";
           let i = 0;
-          const typingInterval = setInterval(() => {
-            setUserTextMobile(text.slice(0, i + 1));
-            i++;
-            if (i === text.length) {
-              clearInterval(typingInterval);
-              setTimeout(() => {
-                setShowUserMessageMobile(true);
-                setUserTextMobile("");
+          const startTyping = () => {
+            const typingInterval = setInterval(() => {
+              setUserTextMobile(text.slice(0, i + 1));
+              i++;
+              if (i === text.length) {
+                clearInterval(typingInterval);
                 setTimeout(() => {
-                  setShowTypingMobile(true);
+                  setShowUserMessageMobile(true);
+                  setUserTextMobile("");
                   setTimeout(() => {
-                    setShowTypingMobile(false);
-                    setShowBotMessage1Mobile(true);
+                    setShowTypingMobile(true);
                     setTimeout(() => {
-                      setShowTyping2Mobile(true);
+                      setShowTypingMobile(false);
+                      setShowBotMessage1Mobile(true);
                       setTimeout(() => {
-                        setShowTyping2Mobile(false);
-                        setShowBotMessage2Mobile(true);
-                      }, 800);
-                    }, 400);
-                  }, 800);
+                        setShowTyping2Mobile(true);
+                        setTimeout(() => {
+                          setShowTyping2Mobile(false);
+                          setShowBotMessage2Mobile(true);
+                          // Aguarda 4s e reinicia animação
+                          resetTimeout = setTimeout(() => {
+                            setShowUserMessageMobile(false);
+                            setShowTypingMobile(false);
+                            setShowBotMessage1Mobile(false);
+                            setShowTyping2Mobile(false);
+                            setShowBotMessage2Mobile(false);
+                            // Aguarda mais tempo antes de reiniciar a digitação
+                            restartTimeout = setTimeout(() => {
+                              setHasAnimatedMobile(false);
+                            }, 1200); // 1.2s extra
+                          }, 4000);
+                        }, 800);
+                      }, 400);
+                    }, 800);
+                  }, 400);
                 }, 400);
-              }, 400);
-            }
-          }, 30);
+              }
+            }, 30);
+          };
+          startTyping();
         }
       },
       { threshold: 0.5 },
@@ -125,8 +161,12 @@ export function ChatBot() {
     if (sectionRefMobile.current) {
       observer.observe(sectionRefMobile.current);
     }
-    return () => observer.disconnect();
-  }, []);
+    return () => {
+      observer.disconnect();
+      clearTimeout(resetTimeout);
+      clearTimeout(restartTimeout);
+    };
+  }, [hasAnimatedMobile]);
 
   return (
     <section
