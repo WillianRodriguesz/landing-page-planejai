@@ -1,9 +1,25 @@
 "use client";
+import "./etapasBarra.css";
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+// import { useScrollReveal } from "./useScrollReveal";
 
 export function ChatBot() {
+  // Animação das etapas
+  const [etapa, setEtapa] = useState(0);
+  useEffect(() => {
+    let timeout1: any, timeout2: any, timeout3: any;
+    setEtapa(0);
+    timeout1 = setTimeout(() => setEtapa(1), 1200);
+    timeout2 = setTimeout(() => setEtapa(2), 2400);
+    timeout3 = setTimeout(() => setEtapa(3), 3600);
+    return () => {
+      clearTimeout(timeout1);
+      clearTimeout(timeout2);
+      clearTimeout(timeout3);
+    };
+  }, []);
   // Estados para animação DESKTOP
   const [showUserMessage, setShowUserMessage] = useState(false);
   const [userText, setUserText] = useState("");
@@ -115,7 +131,7 @@ export function ChatBot() {
   return (
     <section
       ref={sectionRef}
-      className=" relative bg-[#030712] overflow-hidden"
+      className="relative bg-[#030712] overflow-hidden"
       id="prova-social"
     >
       <style>{`
@@ -124,7 +140,7 @@ export function ChatBot() {
           line-height: 2.5rem;
         }
       `}</style>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mt-[-32px]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 -mt-8">
         <div className="text-center mb-8">
           {/* Título e parágrafo removidos */}
         </div>
@@ -132,7 +148,7 @@ export function ChatBot() {
         {/* DESKTOP: fluxo original mantido */}
         <div className="hidden lg:flex justify-between items-center">
           {/* Mockup do Celular com Conversa WhatsApp */}
-          <div className="relative w-[300px] h-[600px] bg-[#020617] rounded-[3.5rem] border-[12px] border-[#1e293b] shadow-[0_0_50px_rgba(168,85,247,0.12)] overflow-hidden z-20 transform -rotate-1 ml-30">
+          <div className="relative w-75 h-150 bg-[#020617] rounded-[3.5rem] border-12 border-[#1e293b] shadow-[0_0_50px_rgba(168,85,247,0.12)] overflow-hidden z-20 transform -rotate-1 ml-30">
             <div className="phone-inner h-full flex flex-col bg-[#04091b]">
               {/* Header WhatsApp */}
               <div className="bg-[#0f172a] px-2 py-3 flex items-center gap-2 border-b border-gray-700">
@@ -168,7 +184,7 @@ export function ChatBot() {
                     <p className="text-sm leading-relaxed">
                       Gastei R$ 50.00 reais no mercado hoje
                     </p>
-                    <div className="absolute bottom-0 right-0 w-0 h-0 border-l-[12px] border-l-[#005c4b] border-b-[12px] border-b-transparent"></div>
+                    <div className="absolute bottom-0 right-0 w-0 h-0 border-l-12 border-l-[#005c4b] border-b-12 border-b-transparent"></div>
                     <p className="text-[10px] text-gray-400 mt-1 text-right">
                       12:34
                     </p>
@@ -211,7 +227,7 @@ export function ChatBot() {
                         Seu saldo mensal foi atualizado. 💰
                       </p>
                     ) : null}
-                    <div className="absolute bottom-0 left-0 w-0 h-0 border-r-[12px] border-r-[#2a2a2a] border-b-[12px] border-b-transparent"></div>
+                    <div className="absolute bottom-0 left-0 w-0 h-0 border-r-12 border-r-[#2a2a2a] border-b-12 border-b-transparent"></div>
                     {showBotMessage1 && (
                       <p className="text-[10px] text-gray-400 mt-1">12:35</p>
                     )}
@@ -245,7 +261,7 @@ export function ChatBot() {
                         Posso ajudar em mais alguma coisa? 😊
                       </p>
                     ) : null}
-                    <div className="absolute bottom-0 left-0 w-0 h-0 border-r-[12px] border-r-[#2a2a2a] border-b-[12px] border-b-transparent"></div>
+                    <div className="absolute bottom-0 left-0 w-0 h-0 border-r-12 border-r-[#2a2a2a] border-b-12 border-b-transparent"></div>
                     {showBotMessage2 && (
                       <p className="text-[10px] text-gray-400 mt-1">12:36</p>
                     )}
@@ -300,7 +316,7 @@ export function ChatBot() {
             </div>
             <h2 className="text-4xl font-extrabold mb-6 leading-tight text-white">
               Gerencie seus gastos em{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-purple-400 to-blue-500">
                 segundos
               </span>
             </h2>
@@ -311,13 +327,39 @@ export function ChatBot() {
             </p>
 
             <div className="space-y-8 relative">
-              <div className="absolute left-6 top-8 bottom-8 w-px bg-gray-700"></div>
+              {/* Barra animada */}
+              <div className="etapas-barra">
+                <div
+                  className="etapas-barra-inner"
+                  style={{
+                    height:
+                      etapa === 0
+                        ? "0%"
+                        : etapa === 1
+                          ? "33%"
+                          : etapa === 2
+                            ? "66%"
+                            : "100%",
+                    transitionDelay:
+                      etapa === 0
+                        ? "0ms"
+                        : etapa === 1
+                          ? "0ms"
+                          : etapa === 2
+                            ? "0ms"
+                            : "0ms",
+                  }}
+                ></div>
+              </div>
 
+              {/* Etapa 1 */}
               <div className="flex gap-6 relative group">
-                <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-purple-500 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform z-10">
+                <div
+                  className={`shrink-0 w-12 h-12 rounded-2xl bg-purple-500 flex items-center justify-center text-white shadow-lg transition-transform z-10 etapas-icone${etapa >= 1 ? " ativa" : ""}`}
+                >
                   <span className="material-symbols-outlined">chat</span>
                 </div>
-                <div>
+                <div className={`etapas-texto${etapa >= 1 ? " ativa" : ""}`}>
                   <h3 className="text-xl font-bold mb-2 text-white">
                     1. Mande uma mensagem
                   </h3>
@@ -328,11 +370,14 @@ export function ChatBot() {
                 </div>
               </div>
 
+              {/* Etapa 2 */}
               <div className="flex gap-6 relative group">
-                <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-blue-500 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform z-10">
+                <div
+                  className={`shrink-0 w-12 h-12 rounded-2xl bg-blue-500 flex items-center justify-center text-white shadow-lg transition-transform z-10 etapas-icone${etapa >= 2 ? " ativa" : ""}`}
+                >
                   <span className="material-symbols-outlined">query_stats</span>
                 </div>
-                <div>
+                <div className={`etapas-texto${etapa >= 2 ? " ativa" : ""}`}>
                   <h3 className="text-xl font-bold mb-2 text-white">
                     2. O bot processa os dados
                   </h3>
@@ -343,11 +388,14 @@ export function ChatBot() {
                 </div>
               </div>
 
+              {/* Etapa 3 */}
               <div className="flex gap-6 relative group">
-                <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-indigo-500 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform z-10">
+                <div
+                  className={`shrink-0 w-12 h-12 rounded-2xl bg-indigo-500 flex items-center justify-center text-white shadow-lg transition-transform z-10 etapas-icone${etapa >= 3 ? " ativa" : ""}`}
+                >
                   <span className="material-symbols-outlined">insights</span>
                 </div>
-                <div>
+                <div className={`etapas-texto${etapa >= 3 ? " ativa" : ""}`}>
                   <h3 className="text-xl font-bold mb-2 text-white">
                     3. Veja seus gráficos
                   </h3>
@@ -357,16 +405,6 @@ export function ChatBot() {
                   </p>
                 </div>
               </div>
-            </div>
-
-            <div className="mt-12">
-              <button className="bg-purple-500 hover:bg-purple-600 text-white px-10 py-4 rounded-2xl text-lg font-bold transition-all shadow-xl glow-purple flex items-center gap-3 hover:-translate-y-1">
-                Começar Agora
-                <span className="material-symbols-outlined">arrow_forward</span>
-              </button>
-              <p className="mt-4 text-sm text-gray-400 px-2">
-                Grátis para começar. Sem cartão de crédito.
-              </p>
             </div>
           </div>
         </div>
@@ -383,7 +421,7 @@ export function ChatBot() {
             </div>
             <h2 className="text-3xl font-extrabold mb-6 leading-tight text-white">
               Gerencie seus gastos em{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-purple-400 to-blue-500">
                 segundos
               </span>
             </h2>
@@ -396,7 +434,7 @@ export function ChatBot() {
           {/* MOCKUP DO CELULAR COM CONVERSA DO BOT */}
           <div
             ref={sectionRefMobile}
-            className="relative w-[300px] h-[600px] bg-[#020617] rounded-[3.5rem] border-[12px] border-[#1e293b] shadow-[0_0_50px_rgba(168,85,247,0.12)] overflow-hidden z-20 transform -rotate-1 mx-auto mb-8"
+            className="relative w-75 h-150 bg-[#020617] rounded-[3.5rem] border-12 border-[#1e293b] shadow-[0_0_50px_rgba(168,85,247,0.12)] overflow-hidden z-20 transform -rotate-1 mx-auto mb-8"
           >
             <div className="phone-inner h-full flex flex-col bg-[#04091b]">
               {/* Header WhatsApp */}
@@ -433,7 +471,7 @@ export function ChatBot() {
                     <p className="text-sm leading-relaxed">
                       Gastei R$ 50.00 reais no mercado hoje
                     </p>
-                    <div className="absolute bottom-0 right-0 w-0 h-0 border-l-[12px] border-l-[#005c4b] border-b-[12px] border-b-transparent"></div>
+                    <div className="absolute bottom-0 right-0 w-0 h-0 border-l-12 border-l-[#005c4b] border-b-12 border-b-transparent"></div>
                     <p className="text-[10px] text-gray-400 mt-1 text-right">
                       12:34
                     </p>
@@ -476,7 +514,7 @@ export function ChatBot() {
                         Seu saldo mensal foi atualizado. 💰
                       </p>
                     ) : null}
-                    <div className="absolute bottom-0 left-0 w-0 h-0 border-r-[12px] border-r-[#2a2a2a] border-b-[12px] border-b-transparent"></div>
+                    <div className="absolute bottom-0 left-0 w-0 h-0 border-r-12 border-r-[#2a2a2a] border-b-12 border-b-transparent"></div>
                     {showBotMessage1Mobile && (
                       <p className="text-[10px] text-gray-400 mt-1">12:35</p>
                     )}
@@ -510,7 +548,7 @@ export function ChatBot() {
                         Posso ajudar em mais alguma coisa? 😊
                       </p>
                     ) : null}
-                    <div className="absolute bottom-0 left-0 w-0 h-0 border-r-[12px] border-r-[#2a2a2a] border-b-[12px] border-b-transparent"></div>
+                    <div className="absolute bottom-0 left-0 w-0 h-0 border-r-12 border-r-[#2a2a2a] border-b-12 border-b-transparent"></div>
                     {showBotMessage2Mobile && (
                       <p className="text-[10px] text-gray-400 mt-1">12:36</p>
                     )}
@@ -559,7 +597,7 @@ export function ChatBot() {
             <div className="absolute left-6 top-8 bottom-8 w-px bg-gray-700"></div>
             {/* Card 1 */}
             <div className="flex gap-4 relative group">
-              <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-purple-500 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform z-10">
+              <div className="shrink-0 w-12 h-12 rounded-2xl bg-purple-500 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform z-10">
                 <span className="material-symbols-outlined">chat</span>
               </div>
               <div>
@@ -574,7 +612,7 @@ export function ChatBot() {
             </div>
             {/* Card 2 */}
             <div className="flex gap-4 relative group">
-              <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-blue-500 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform z-10">
+              <div className="shrink-0 w-12 h-12 rounded-2xl bg-blue-500 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform z-10">
                 <span className="material-symbols-outlined">query_stats</span>
               </div>
               <div>
@@ -589,7 +627,7 @@ export function ChatBot() {
             </div>
             {/* Card 3 */}
             <div className="flex gap-4 relative group">
-              <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-indigo-500 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform z-10">
+              <div className="shrink-0 w-12 h-12 rounded-2xl bg-indigo-500 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform z-10">
                 <span className="material-symbols-outlined">insights</span>
               </div>
               <div>

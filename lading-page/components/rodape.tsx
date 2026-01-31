@@ -1,10 +1,16 @@
 "use client";
 
 import Link from "next/link";
+import { useScrollReveal } from "./useScrollReveal";
+import "./scrollRevealAnimations.css";
 
 export function Rodape() {
+  const { ref, revealed } = useScrollReveal({ threshold: 0.15, repeat: true });
   return (
-    <footer className="relative bg-white/5 backdrop-blur-xl border-t border-white/10">
+    <footer
+      ref={ref as any}
+      className={`relative bg-white/5 backdrop-blur-xl border-t border-white/10 reveal${revealed ? " revealed" : ""}`}
+    >
       {/* Decorative top border */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
 

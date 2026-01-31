@@ -1,0 +1,42 @@
+.etapas-barra {
+  position: absolute;
+  left: 24px;
+  top: 48px;
+  bottom: 48px;
+  width: 4px;
+  background: #6b7280;
+  border-radius: 9999px;
+  overflow: hidden;
+  z-index: 0;
+}
+.etapas-barra-inner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(to bottom, #a78bfa, #6366f1);
+  border-radius: 9999px;
+  z-index: 1;
+  transition: height 1.2s cubic-bezier(0.4, 1.7, 0.7, 1);
+}
+.etapas-texto {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.7s,
+    transform 0.7s;
+}
+.etapas-texto.ativa {
+  opacity: 1;
+  transform: translateY(0);
+}
+.etapas-icone {
+  filter: grayscale(1) opacity(0.5);
+  transition:
+    filter 0.3s,
+    opacity 0.3s;
+}
+.etapas-icone.ativa {
+  filter: none;
+  opacity: 1;
+}

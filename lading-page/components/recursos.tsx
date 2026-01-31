@@ -1,4 +1,7 @@
 "use client";
+import { useScrollReveal } from "./useScrollReveal";
+import { useRef, useEffect, useState } from "react";
+import "./scrollRevealAnimations.css";
 
 export function Recursos() {
   const recursos = [
@@ -58,8 +61,51 @@ export function Recursos() {
     return mapaCores[cor];
   };
 
+  const { ref, revealed } = useScrollReveal({ threshold: 0.15, repeat: true });
+  // refs e estados para animação dos cards
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [cardsRevealed, setCardsRevealed] = useState<boolean[]>(
+    recursos.map(() => false),
+  );
+
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+    let triggered = false;
+    const revealCards = () => {
+      if (triggered) return;
+      triggered = true;
+      recursos.forEach((_, idx) => {
+        setTimeout(() => {
+          setCardsRevealed((old) => {
+            const novo = [...old];
+            novo[idx] = true;
+            return novo;
+          });
+        }, idx * 350);
+      });
+    };
+    if (cardRefs.current[0]) {
+      const obs = new window.IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            revealCards();
+            obs.disconnect();
+          }
+        },
+        { threshold: 0.18 },
+      );
+      obs.observe(cardRefs.current[0]);
+      observers.push(obs);
+    }
+    return () => observers.forEach((o) => o.disconnect());
+  }, []);
+
   return (
-    <section className="pt-20 pb-40 relative bg-[#030712]" id="recursos">
+    <section
+      ref={ref as any}
+      className={`pt-20 pb-40 relative bg-[#030712] reveal${revealed ? " revealed" : ""}`}
+      id="recursos"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Cabecalho */}
         <div className="mb-20">
@@ -82,7 +128,10 @@ export function Recursos() {
             return (
               <div
                 key={indice}
-                className={`p-6 md:p-10 rounded-[2.5rem] bg-white/5 border border-white/10 ${cores.bordaHover} hover:bg-white/[0.08] transition-all duration-500 group relative overflow-hidden hover:shadow-2xl hover:shadow-purple-500/10 hover:-translate-y-2 hover:rotate-1`}
+                ref={(el) => {
+                  cardRefs.current[indice] = el;
+                }}
+                className={`card-reveal${cardsRevealed[indice] ? " revealed" : ""} p-6 md:p-10 rounded-[2.5rem] bg-white/5 border border-white/10 ${cores.bordaHover} hover:bg-white/[0.08] transition-all duration-500 group relative overflow-hidden hover:shadow-2xl hover:shadow-purple-500/10 hover:-translate-y-2 hover:rotate-1`}
                 onMouseMove={(e) => {
                   const card = e.currentTarget;
                   const rect = card.getBoundingClientRect();
