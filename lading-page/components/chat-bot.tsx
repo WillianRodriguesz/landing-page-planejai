@@ -171,8 +171,8 @@ export function ChatBot() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-[#030712] overflow-hidden"
-      id="prova-social"
+      className="relative bg-[#030712] overflow-hidden scroll-mt-24"
+      id="chat-bot"
     >
       <style>{`
         textarea::placeholder {
