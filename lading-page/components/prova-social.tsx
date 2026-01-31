@@ -10,12 +10,15 @@ export function ProvaSocial() {
   const [showTyping2, setShowTyping2] = useState(false);
   const [showBotMessage1, setShowBotMessage1] = useState(false);
   const [showBotMessage2, setShowBotMessage2] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting) {
+        if (entries[0].isIntersecting && !hasAnimated) {
+          setHasAnimated(true);
+          observer.disconnect();
           const text = "Gastei R$ 50.00 reais no mercado hoje";
           let i = 0;
           const typingInterval = setInterval(() => {
@@ -61,6 +64,12 @@ export function ProvaSocial() {
       className="py-24 relative bg-[#030712] overflow-hidden"
       id="prova-social"
     >
+      <style>{`
+        textarea::placeholder {
+          text-align: center;
+          line-height: 2.5rem;
+        }
+      `}</style>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold mb-4 text-white">
@@ -101,7 +110,7 @@ export function ProvaSocial() {
               </div>
 
               {/* Área de Conversa */}
-              <div className="flex-1 p-4 space-y-4 bg-[#0a0a0a]">
+              <div className="flex-1 p-4 space-y-2 bg-[#0a0a0a]">
                 {/* Mensagem do Usuário */}
                 <div
                   className={`flex justify-end transition-opacity duration-500 ${showUserMessage ? "opacity-100" : "opacity-0"}`}
@@ -196,23 +205,27 @@ export function ProvaSocial() {
               </div>
 
               {/* Campo de Digitação */}
-              <div className="bg-[#1f1f1f] px-4 py-2 flex items-center gap-2 border-t border-gray-700">
-                <div className="flex-1 bg-[#2a2a2a] rounded-full px-2 py-2 flex items-center gap-1 shadow-sm border border-gray-600">
-                  <span className="material-symbols-outlined text-gray-400 text-sm">
+              <div className="bg-[#1f1f1f] px-2 py-2 flex items-center gap-2 border-t border-gray-700">
+                <div className="flex-1 bg-[#2a2a2a] rounded-full px-1 py-2 flex items-center gap-0.5 shadow-sm border border-gray-600">
+                  <span className="material-symbols-outlined text-gray-400 text-xs">
                     mood
                   </span>
                   <textarea
                     value={userText}
                     placeholder="Digite uma mensagem"
-                    className="flex-1 bg-transparent text-white text-sm outline-none resize-none"
+                    className="flex-1 bg-transparent text-white text-sm outline-none resize-none self-center"
                     readOnly
-                    rows={1}
-                    style={{ minHeight: "1.25rem", overflow: "hidden" }}
+                    rows={2}
+                    style={{
+                      minHeight: "1.25rem",
+                      overflow: "hidden",
+                      lineHeight: "1.25rem",
+                    }}
                   />
-                  <span className="material-symbols-outlined text-gray-400 text-sm">
+                  <span className="material-symbols-outlined text-gray-400 text-xs">
                     photo_camera
                   </span>
-                  <span className="material-symbols-outlined text-gray-400 text-sm">
+                  <span className="material-symbols-outlined text-gray-400 text-xs">
                     mic
                   </span>
                 </div>
