@@ -55,7 +55,6 @@ export function ChatBot() {
       (entries) => {
         if (entries[0].isIntersecting && !hasAnimated) {
           setHasAnimated(true);
-          observer.disconnect();
           const text = "Gastei R$ 50.00 reais no mercado hoje";
           let i = 0;
           const startTyping = () => {
@@ -79,15 +78,17 @@ export function ChatBot() {
                           setShowBotMessage2(true);
                           // Aguarda 4s e reinicia animação
                           resetTimeout = setTimeout(() => {
-                            setShowUserMessage(false);
-                            setShowTyping(false);
-                            setShowBotMessage1(false);
-                            setShowTyping2(false);
-                            setShowBotMessage2(false);
-                            // Aguarda mais tempo antes de reiniciar a digitação
-                            restartTimeout = setTimeout(() => {
-                              setHasAnimated(false);
-                            }, 1200); // 1.2s extra
+                            // Só reinicia se a seção não estiver visível
+                            if (!entries[0].isIntersecting) {
+                              setShowUserMessage(false);
+                              setShowTyping(false);
+                              setShowBotMessage1(false);
+                              setShowTyping2(false);
+                              setShowBotMessage2(false);
+                              restartTimeout = setTimeout(() => {
+                                setHasAnimated(false);
+                              }, 1200);
+                            }
                           }, 4000);
                         }, 800);
                       }, 400);
@@ -119,7 +120,6 @@ export function ChatBot() {
       (entries) => {
         if (entries[0].isIntersecting && !hasAnimatedMobile) {
           setHasAnimatedMobile(true);
-          observer.disconnect();
           const text = "Gastei R$ 50.00 reais no mercado hoje";
           let i = 0;
           const startTyping = () => {
@@ -143,15 +143,17 @@ export function ChatBot() {
                           setShowBotMessage2Mobile(true);
                           // Aguarda 4s e reinicia animação
                           resetTimeout = setTimeout(() => {
-                            setShowUserMessageMobile(false);
-                            setShowTypingMobile(false);
-                            setShowBotMessage1Mobile(false);
-                            setShowTyping2Mobile(false);
-                            setShowBotMessage2Mobile(false);
-                            // Aguarda mais tempo antes de reiniciar a digitação
-                            restartTimeout = setTimeout(() => {
-                              setHasAnimatedMobile(false);
-                            }, 1200); // 1.2s extra
+                            // Só reinicia se a seção não estiver visível
+                            if (!entries[0].isIntersecting) {
+                              setShowUserMessageMobile(false);
+                              setShowTypingMobile(false);
+                              setShowBotMessage1Mobile(false);
+                              setShowTyping2Mobile(false);
+                              setShowBotMessage2Mobile(false);
+                              restartTimeout = setTimeout(() => {
+                                setHasAnimatedMobile(false);
+                              }, 1200);
+                            }
                           }, 4000);
                         }, 800);
                       }, 400);

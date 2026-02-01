@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useScrollReveal } from "../../hooks/useScrollReveal";
 import "../../styles/scrollRevealAnimations.css";
 export function Hero() {
-  const { ref, revealed } = useScrollReveal({ threshold: 0.15, repeat: true });
+  const { ref, revealed } = useScrollReveal({ threshold: 0.15, repeat: false });
   return (
     <section
       ref={ref as any}
