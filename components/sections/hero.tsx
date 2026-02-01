@@ -205,7 +205,7 @@ export function Hero() {
                           cy="18"
                           r="12"
                           fill="none"
-                          stroke="#a855f7"
+                          stroke="rgba(168, 85, 247, 0.7)"
                           strokeWidth="6"
                           strokeDasharray="52.0 23.4"
                           strokeDashoffset="0"
@@ -216,7 +216,7 @@ export function Hero() {
                           cy="18"
                           r="12"
                           fill="none"
-                          stroke="#22d3ee"
+                          stroke="rgba(34, 211, 238, 0.7)"
                           strokeWidth="6"
                           strokeDasharray="10.4 64.9"
                           strokeDashoffset="-52.0"
@@ -227,7 +227,7 @@ export function Hero() {
                           cy="18"
                           r="12"
                           fill="none"
-                          stroke="#facc15"
+                          stroke="rgba(250, 204, 21, 0.7)"
                           strokeWidth="6"
                           strokeDasharray="6.5 68.9"
                           strokeDashoffset="-62.4"
@@ -238,7 +238,7 @@ export function Hero() {
                           cy="18"
                           r="12"
                           fill="none"
-                          stroke="#22c55e"
+                          stroke="rgba(34, 197, 94, 0.7)"
                           strokeWidth="6"
                           strokeDasharray="6.5 68.9"
                           strokeDashoffset="-68.9"
@@ -256,7 +256,7 @@ export function Hero() {
                     <div className="flex-1 space-y-1.5">
                       <div className="flex items-center justify-between gap-3">
                         <div className="flex items-center gap-2">
-                          <div className="w-2 h-2 rounded-full bg-purple-500"></div>
+                          <div className="w-2 h-2 rounded-full bg-purple-500/70"></div>
                           <span className="text-gray-400 text-[10px]">
                             Cartão
                           </span>
@@ -267,7 +267,7 @@ export function Hero() {
                       </div>
                       <div className="flex items-center justify-between gap-3">
                         <div className="flex items-center gap-2">
-                          <div className="w-2 h-2 rounded-full bg-cyan-400"></div>
+                          <div className="w-2 h-2 rounded-full bg-cyan-400/70"></div>
                           <span className="text-gray-400 text-[10px]">
                             academia
                           </span>
@@ -278,7 +278,7 @@ export function Hero() {
                       </div>
                       <div className="flex items-center justify-between gap-3">
                         <div className="flex items-center gap-2">
-                          <div className="w-2 h-2 rounded-full bg-yellow-400"></div>
+                          <div className="w-2 h-2 rounded-full bg-yellow-400/70"></div>
                           <span className="text-gray-400 text-[10px]">
                             assinaturas
                           </span>
@@ -289,7 +289,7 @@ export function Hero() {
                       </div>
                       <div className="flex items-center justify-between gap-3">
                         <div className="flex items-center gap-2">
-                          <div className="w-2 h-2 rounded-full bg-green-500"></div>
+                          <div className="w-2 h-2 rounded-full bg-green-500/70"></div>
                           <span className="text-gray-400 text-[10px]">
                             alimentacao
                           </span>
