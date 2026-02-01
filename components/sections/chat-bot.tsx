@@ -1,7 +1,7 @@
 "use client";
+// @ts-ignore
 import "../../styles/etapasBarra.css";
 
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 // import { useScrollReveal } from "./useScrollReveal";
 
@@ -15,10 +15,10 @@ export function ChatBot() {
           observer.disconnect();
           setTimeout(() => {
             setEtapa(0);
-            setTimeout(() => setEtapa(1), 1000);
+            setTimeout(() => setEtapa(1), 600);
             setTimeout(() => setEtapa(2), 2000);
             setTimeout(() => setEtapa(3), 3000);
-          }, 2000); // Aguarda 2s antes de começar
+          }, 100); // Aguarda 1s antes de começar
         }
       },
       { threshold: 0.5 },
@@ -50,7 +50,7 @@ export function ChatBot() {
 
   // Animação DESKTOP
   useEffect(() => {
-    let resetTimeout: any, restartTimeout: any;
+    let resetTimeout: ReturnType<typeof setTimeout>, restartTimeout: ReturnType<typeof setTimeout>;
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting && !hasAnimated) {
@@ -114,7 +114,7 @@ export function ChatBot() {
 
   // Animação MOBILE
   useEffect(() => {
-    let resetTimeout: any, restartTimeout: any;
+    let resetTimeout: ReturnType<typeof setTimeout>, restartTimeout: ReturnType<typeof setTimeout>;
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting && !hasAnimatedMobile) {
@@ -179,7 +179,7 @@ export function ChatBot() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-[#030712] overflow-hidden scroll-mt-24"
+      className="relative bg-[#030712] overflow-hidden scroll-mt-24 mb-20"
       id="chat-bot"
     >
       <style>{`
@@ -188,7 +188,7 @@ export function ChatBot() {
           line-height: 2.5rem;
         }
       `}</style>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 -mt-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mt-8">
         <div className="text-center mb-8">
           {/* Título e parágrafo removidos */}
         </div>

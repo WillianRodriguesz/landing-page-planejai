@@ -9,7 +9,7 @@ export function Hero() {
   return (
     <section
       ref={ref as any}
-      className={`relative min-h-screen flex items-center pt-24 overflow-hidden bg-grid pb-0 reveal${revealed ? " revealed" : ""}`}
+      className={`relative min-h-screen flex items-center pt-24 overflow-hidden bg-grid pb-0 mb-20 reveal${revealed ? " revealed" : ""}`}
     >
       <div className="hero-glow-1"></div>
       <div className="hero-glow-2"></div>

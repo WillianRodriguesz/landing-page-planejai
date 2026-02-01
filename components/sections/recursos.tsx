@@ -103,7 +103,7 @@ export function Recursos() {
   return (
     <section
       ref={ref as any}
-      className={`pt-20 pb-40 relative bg-[#030712] reveal${revealed ? " revealed" : ""}`}
+      className={`pt-20 pb-40 mb-20 relative bg-[#030712] reveal${revealed ? " revealed" : ""}`}
       id="recursos"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

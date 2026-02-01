@@ -7,7 +7,7 @@ export function Navegacao() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed w-full z-50 bg-[#030712]/50 backdrop-blur-xl border-b border-white/5">
+    <nav className="fixed w-full z-50 nav-glass border-b border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
           <div className="flex items-center gap-3">
