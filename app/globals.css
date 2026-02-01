@@ -3,31 +3,19 @@ html {
   scroll-behavior: smooth;
 }
 .nav-glass {
-  background: rgba(3, 7, 18, 0.8); /* Fallback sólido para Chrome */
-}
-@supports (backdrop-filter: blur(1px)) {
-  .nav-glass {
-    background: rgba(3, 7, 18, 0.5);
-    backdrop-filter: blur(16px);
-  }
+  background: rgba(3, 7, 18, 0.5);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 .card-glass {
-  background: rgba(255, 255, 255, 0.05); /* Fallback sólido para Chrome */
-}
-@supports (backdrop-filter: blur(1px)) {
-  .card-glass {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(10px);
-  }
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 .button-glass {
-  background: rgba(255, 255, 255, 0.05); /* Fallback sólido para Chrome */
-}
-@supports (backdrop-filter: blur(1px)) {
-  .button-glass {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(12px);
-  }
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }@import "tailwindcss";
 @import "tw-animate-css";
 
@@ -167,15 +155,11 @@ html {
 }
 
 .neon-card {
-  background: rgba(255, 255, 255, 0.05); /* Fallback sólido para Chrome */
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 0 20px rgba(168, 85, 247, 0.1);
-}
-@supports (backdrop-filter: blur(1px)) {
-  .neon-card {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(12px);
-  }
 }
 
 .neon-cyan-glow {
@@ -217,6 +201,11 @@ html {
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
+}
+
+.glow-blur {
+  filter: blur(100px);
+  -webkit-filter: blur(100px);
 }
 
 @keyframes float {

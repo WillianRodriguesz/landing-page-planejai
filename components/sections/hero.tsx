@@ -333,7 +333,7 @@ export function Hero() {
 
             {/* Brilho de Fundo */}
             <div className="absolute inset-0 z-0 flex items-center justify-center">
-              <div className="w-[400px] h-[400px] bg-purple-500/10 blur-[100px] rounded-full"></div>
+              <div className="w-[400px] h-[400px] bg-purple-500/10 glow-blur rounded-full"></div>
             </div>
           </div>
         </div>
