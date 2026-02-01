@@ -44,13 +44,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "pt_BR",
     url: "https://planejai.cloud",
-    title: "Planejai | Gerencie suas Finanças com Inteligência Artificial",
+    title: "Planejai | Gerencie suas Finanças com Inteligência",
     description:
       "Controle suas finanças de forma simples e inteligente. Assistente IA, gráficos detalhados e ferramentas gratuitas para você organizar seu dinheiro.",
     siteName: "Planejai",
     images: [
       {
-        url: "/image/logo-planejai.png",
+        url: "https://planejai.cloud/image/logo-planejai.png",
         width: 1200,
         height: 630,
         alt: "Planejai - Gestão Financeira Inteligente",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     title: "Planejai | Gerencie suas Finanças com Inteligência Artificial",
     description:
       "Controle suas finanças de forma simples e inteligente. Assistente IA, gráficos detalhados e ferramentas gratuitas.",
-    images: ["/image/logo-planejai.png"],
+    images: ["https://planejai.cloud/image/logo-planejai.png"],
     creator: "@planejai",
   },
   icons: {
