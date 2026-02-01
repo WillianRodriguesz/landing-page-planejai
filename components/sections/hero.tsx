@@ -46,7 +46,7 @@ export function Hero() {
               </Link>
               <Link
                 href="#recursos"
-                className="inline-flex items-center justify-center px-10 py-4 text-lg font-bold rounded-2xl text-white bg-white/5 border border-white/10 hover:bg-white/10 transition-all backdrop-blur-md"
+                className="inline-flex items-center justify-center px-10 py-4 text-lg font-bold rounded-2xl text-white button-glass border border-white/10 hover:bg-white/10 transition-all"
               >
                 Saiba Mais
               </Link>

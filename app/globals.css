@@ -19,6 +19,15 @@ html {
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(10px);
   }
+}
+.button-glass {
+  background: rgba(255, 255, 255, 0.05); /* Fallback sólido para Chrome */
+}
+@supports (backdrop-filter: blur(1px)) {
+  .button-glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+  }
 }@import "tailwindcss";
 @import "tw-animate-css";
 
@@ -158,10 +167,15 @@ html {
 }
 
 .neon-card {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.05); /* Fallback sólido para Chrome */
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 0 20px rgba(168, 85, 247, 0.1);
+}
+@supports (backdrop-filter: blur(1px)) {
+  .neon-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+  }
 }
 
 .neon-cyan-glow {
