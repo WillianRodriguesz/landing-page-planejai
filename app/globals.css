@@ -213,6 +213,11 @@ html {
   -webkit-filter: blur(100px);
 }
 
+.card-blur {
+  filter: blur(40px);
+  -webkit-filter: blur(40px);
+}
+
 @keyframes float {
   0%,
   100% {

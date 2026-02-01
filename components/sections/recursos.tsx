@@ -154,7 +154,7 @@ export function Recursos() {
                   }}
                 ></div>
                 <div
-                  className={`absolute -right-8 -top-8 w-24 h-24 ${cores.brilho} rounded-full blur-2xl transition-all duration-500 group-hover:scale-150 z-0`}
+                  className={`absolute -right-8 -top-8 w-24 h-24 ${cores.brilho} rounded-full blur-[40px] transition-all duration-500 group-hover:scale-150 z-0`}
                 ></div>
                 <div className="relative z-10">
                   <div
